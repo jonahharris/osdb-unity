@@ -1,0 +1,18 @@
+nsbPackageDescription: 1
+paths:
+  ins/%E
+  ins/share
+  misc/
+  COPYING
+pathSubs:
+  COPYING lib/unity/COPYING
+  ins/%E/
+  ins/%E/	
+  ins/share/
+  misc/
+excludePaths:
+  ins/share/lib/unity/man/cat*
+  ins/share/lib/unity/man/man*/Index*
+updateParameters:
+  source archived 
+  homePage http://www.bell-labs.com/project/wwexptools/unity/

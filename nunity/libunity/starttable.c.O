@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <varargs.h>
+
+/*VARARGS1*/
+FILE *
+starttable( va_alist )
+va_dcl
+{
+	register int len, cnt;
+	register int just;	/* really a character */
+	register char *strptr, *name, *options;
+	va_list arg;
+	char cmdline[1024];
+
+	va_start( arg );
+	options = va_arg( arg, char * );
+	cnt = va_arg( arg, int );
+	if ( cnt <= 0 )
+		return( NULL );
+
+	fflush( stdout );
+	sprintf( cmdline, "prtable %s", options );
+	strptr = &cmdline[strlen( cmdline )];
+
+	while( cnt-- > 0 ) {
+		len = va_arg( arg, int );
+		just = va_arg( arg, int );
+		name = va_arg( arg, char * );
+		sprintf( strptr, " -%c%d \"%s\"", just, len, name );
+		strptr += strlen( strptr );
+	}
+
+	return( popen( cmdline, "w" ) );
+}
+
+endtable( fp )
+FILE *fp;
+{
+	return( pclose( fp ) );
+}

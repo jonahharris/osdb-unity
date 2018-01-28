@@ -1,0 +1,38 @@
+09/19/06
+========
+Relaxed a check for printable characters to allow "8-bit" characters with
+accents, umlauts, etc. to be inserted.
+
+03/22/06
+========
+Fixed a bug where invalid syntax in a where clause can cause a core
+dump.
+
+02/05/04
+========
+Two new user supplied commands have been included in the Exptools UNITY
+package:  un2html is used to print an HTML table from a unity data
+base, and un2tbl is used to print a table in tbl form for a troff
+(or groff) document.
+
+========
+UNITY is a small relational data  base  management  system (DBMS)  that  
+runs  under  the  UNIX(TM) operating system.  UNITY is very user-oriented  
+and  provides  many  powerful command  capabilities.   Emphasis is placed 
+on ease of use and allowing a multi-user environment while keeping  UNITY
+small and simple to understand and maintain.
+
+It has become extremely popular within the AT&T/Lucent community due to its
+power and flexibility.  Many common tasks can be done with supplied commands,
+and the flat file database structure allows easy manipulation by other
+tools for specific purposes.
+
+For a general overview of UNITY, see
+
+	toolman -D unity Intro
+
+UNITY is now available in World-Wide Exptools, with a home page of
+http://www.bell-labs.com/wwexptools/unity/.  Source code is available 
+under the Lucent Public License (LPL)
+
+If you have any questions or suggestions, contact exptools@lucent.com

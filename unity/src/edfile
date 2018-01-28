@@ -1,0 +1,6 @@
+/intr()/c
+intr(unused)
+int unused;
+.
+w
+q

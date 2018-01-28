@@ -1,0 +1,81 @@
+02/05/04
+========
+Two new user supplied commands have been included in the Exptools UNITY
+package:  un2html is used to print an HTML table from a unity data
+base, and un2tbl is used to print a table in tbl form for a troff
+(or groff) document.
+
+08/10/04
+========
+Add a user-supplied patch to allow improved formatting in uprint and
+prtable.  If the UNITY_PRT is set to "in1space=y", then fields will be
+indented rather than being printed right up next to the field separator.
+If UNITY_PRT is not set, then there should be no change in the operation
+of these commands.
+
+06/11/03
+========
+Rebuilt using gcc-3.3 on solaris and ilinux.  Should be no changes 
+in functionality, even though several functions had to be re-written
+to use stdarg.h instead of varargs.h
+
+03/07/03
+========
+Ported to isolaris
+
+08/02/01
+========
+Unity has been updated with several bugfixes and enhancments from Gerry
+Graesser.  The most visible change is that the join, format, display, and
+dis commands, as those names conflict with standard Unix commands.   The
+alternate names ujoin, uformat, udisplay, and udis have been available for
+some time and the commands are still present under those names.
+
+=============== New Unity / Unity Release Notes ==================
+
+BUG FIXES
+
+This is not an inclusive list, but hits some of the important ones.
+
+- Y2K compliancy, both internally and in date comparisons
+  A date can have a four-digit year, or a two-digit year is
+  interpreted by the window method.
+
+- retrieve -F will return an error code if qprintf fails.
+
+- on Solaris, regular expressions that contain character classes
+  (e.g. [a-z] - these are generated internally for caseless comparisons)
+  now work correctly.  (This was a bug in the Solaris regular expression
+  routines.)
+
+NEW FEATURES
+
+1) Y2K compliant date comparisons.
+
+2) Many more features in date comparisons.  There are several
+   new date formats recognized, and dates can include times now.
+
+3) Maximum record size (in old unity commands) and attribute size
+   (in all commands) is now 16K on Solaris machines.
+
+4) There is a new command called usort which is an extension of
+   the asort (attribute sort) command.  usort allows sorting on
+   multiple attributes, and has many options for controlling
+   the sorting order and method of comparing fields.
+
+5) udisplay/udis are synonyms for display/dis command
+
+6) ninsert includes new options:
+	-z do not include zero-print-width attribute unless
+		explicitly listed
+	-f/-F control the precision of rec#/REC# (the input record
+		number/output record number) pseudo-attribute
+
+7) "old" unity commands now recognize the UNITYUNPACK environment
+   variable, which tells them how to recognize and unpack compressed
+   relations
+
+8) the catalog command has new options:
+	-o page offset
+	-v use verbose (friendly) attribute names
+

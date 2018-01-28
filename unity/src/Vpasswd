@@ -1,0 +1,13 @@
+/*
+ * Copyright (C) 2002 by Lucent Technologies
+ *
+ */
+
+/*	@(#)Vpasswd	1.1 */
+login % ".{3,8}"			badlogin
+passwd == ""
+	shell == "/bin/rsh" | shell == "/bin/uname" | \
+		shell == "/bin/sync"			nopasswd
+uid % "[0-9]{1,5}"					baduid
+gid % "[0-9]{1,5}"					badgid
+home != ""						badhome

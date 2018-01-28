@@ -1,0 +1,30 @@
+#!/bin/sh
+
+for ARG
+do
+	case "$ARG" in
+	-l )
+		:
+		;;
+	cygwin )
+		EXTRAMAKE="CC=gcc-2"
+		;;
+	darwin )
+		EXTRAMAKE="CC=gcc2"
+		;;
+	solaris | hppa )
+		EXTRAMAKE="CC=/opt/exp/old/bin/gcc"
+		;;
+	ilinux )
+		EXTRAMAKE="LIBS=/opt/exp/lib/ctype.o"
+		;;
+	isolaris )
+		# Need to make sure we pick up the Exptools compiler, 
+		# (not /usr/local) and use gnu strip
+		EXTRAMAKE="CC=/opt/exp/old/bin/gcc"		
+		PATH=/opt/exp/gnu/bin:$PATH
+	esac
+done
+
+
+make $EXTRAMAKE all

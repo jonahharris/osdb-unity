@@ -1,0 +1,325 @@
+#
+# Copyright (C) 2002 by Lucent Technologies
+#
+
+#
+# Send off a remote command to build unity for a particular machine
+#
+CMD=$0
+PATH=$PATH:$TOOLS/adm/upd1.1/bin
+ALLMACHS="darwin cygwin ibm vax 3b2 3b20 sun3 sparc solaris isolaris i386 i486 mips pyr hppa sgi ilinux zlinux uts4"
+USAGE="USAGE: $CMD [-d] [-e] [-n] [-q] [-l|-s|-r] [-D<cpp_def>] [-m<make_args>] <machine_types>...
+	-D<cpp_def>	Define preprocessor definition (e.g., -DDEBUG).
+	-d		Create a debuggable version of the products (cc -g).
+	-e		Echo commands before executing them.  (default)
+	-l		Local build.  Build all products on the local machine,
+			descending to all necessary directories.
+	-m<make_args>	Extra make arguments (e.g., product to build or
+			other flags).
+	-n		No-op mode.  Just echo what would be done, but
+			don't do it.
+	-q		Quiet mode.  Don't echo commands.
+	-r		Remote build.  Build as if for exptools.  This
+			will not work for normal logins.
+	-s		Sub-dir build.  Build products only in the current
+			(sub-)directory.
+	<machine_type>	A valid machine type from the list below (or 'all'):
+			$ALLMACHS
+			solaris25
+
+You must be in a directory named 'nunity' for New UNITY builds or
+a directory name 'unity' for an Original UNITY build.
+
+The build mode (local, sub-dir, or remote) defaults to local or sub-dir,
+depending on whether you're in a sub-directory or not of [n]unity.
+"
+
+#
+# Check which product we're building.  This is done by
+# checking the current directory path.  We have two
+# expressions depending on whether the *unity directory
+# is the last one in the path or not.
+#
+DFLT_LOC=subdir
+UPONE=../
+PRODUCT=`expr "\`pwd\`" : '.*/\([^/]*unity\)/.*'`
+if [ -z "$PRODUCT" ]; then
+	UPONE=
+	DFLT_LOC=local
+	PRODUCT=`expr "\`pwd\`" : '.*/\([^/]*unity\)$'`
+fi
+case "$PRODUCT" in
+unity | nunity )
+	:
+	;;
+* )
+	echo "$CMD: ERROR: not in correct directory" >&2
+	exit 1
+	;;
+esac
+
+NOOP=
+DEFS=""
+ECHO=true
+MACHLIST=
+LOCATION=
+MAKEARGS=
+
+for ARG
+do
+	case "$ARG" in
+	darwin | cygwin | ibm | vax | 3b2 | 3b20 | sun3 | sparc | solaris | isolaris | solaris25 | i386 | i486 | mips | pyr | hppa | sgi | *linux | uts4 )
+		MACHLIST="$MACHLIST $ARG"
+		: ${LOCATION:=remote}
+		;;
+	all )
+		MACHLIST="$MACHLIST $ALLMACHS"
+		LOCATION=remote
+		;;
+	-D* )
+		DEFS="$DEFS $ARG"
+		;;
+	-d | -g )
+		MAKEARGS="$MAKEARGS OPTFLAG=-g STRIP=:"
+		;;
+	-e )
+		ECHO=true
+		;;
+	-l )
+		LOCATION=local
+		;;
+	-m* )
+		MAKEARGS="$MAKEARGS "`echo "$ARG" | cut -c3-`
+		;;
+	-n )
+		NOOP=echo
+		;;
+	-q )
+		ECHO=false
+		;;
+	-r )
+		LOCATION=remote
+		;;
+	-s )
+		LOCATION=subdir
+		;;
+	* )
+		echo "$CMD: ERROR: unrecognized option '$ARG'" >&2
+		echo "$USAGE" >&2
+		exit 1
+		;;
+	esac
+done
+
+: ${LOCATION:=$DFLT_LOC}
+
+if [ -z "$MACHLIST" ]; then
+	if [ "$LOCATION" = remote -o "`uname -s`" != uts ]; then
+		echo "$CMD: ERROR: no machine types given on command line" >&2
+		echo "$USAGE" >&2
+		exit 1
+	else
+		MACHLIST=ibm
+	fi
+fi
+
+#
+# Definitions for Unity products
+#
+unity( )
+{
+	HIGHMAKE=
+	IOSIZE=`grep "^$MACH	" ${UPONE}iosize | cut -d'	' -f2`
+	ALLDEFS="-DDBBLKSIZE=${IOSIZE:-4096}"
+
+	case "$MACH" in
+	ibm | uts4 )
+		EXTRA="DEFS=\"$ALLDEFS -DSUPGRP -DTMPLOCK -DNGROUPS_MAX=16 $DEFS\""
+		;;
+	vax | 3b20 )
+		EXTRA="DEFS=\"$ALLDEFS -DTMPLOCK $DEFS\""
+		;;
+	3b2 | i386 | pyr | mips  )
+		EXTRA="DEFS=\"$ALLDEFS -DRETSIGTYPE=void -DTMPLOCK $DEFS\""
+		;;
+	i486 )
+		EXTRA="DEFS=\"$ALLDEFS -DHAVE_SELECT -DSVR4 -DADVLOCK -DRETSIGTYPE=void $DEFS\" PW=-lgen"
+		;;
+	sun3 | sparc )
+		#
+		# No programmers workbench on suns, so we fake it out
+		#
+		EXTRA="DEFS=\"-fwritable-strings $ALLDEFS -Dstrtoul=strtol -DNEED_TOUPPER -DHAVE_SELECT -DRETSIGTYPE=void -DMAXATT=500 -DSUNOS $DEFS\" PW= PW1=regcmp.o PW2=regex.o"
+		;;
+	solaris )
+		EXTRA="YACC=/opt/exp/gnu/bin/yacc DEFS=\"-fwritable-strings $ALLDEFS -DHAVE_SELECT -DSVR4 -DADVLOCK -DMAXATT=500 -DRETSIGTYPE=void -DSUNOS $DEFS\" PW= PW1=regcmp.o PW2=regex.o CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	isolaris )
+		EXTRA="DEFS=\"$ALLDEFS -DHAVE_SELECT -DSVR4 -DADVLOCK -DMAXATT=500 -DRETSIGTYPE=void -DSUNOS $DEFS\" PW= PW1=regcmp.o PW2=regex.o CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	solaris25 )
+		EXTRA="DEFS=\"$ALLDEFS -DHAVE_SELECT -DSVR4 -DADVLOCK -DMAXATT=500 -DRETSIGTYPE=void -DSUNOS $DEFS\" PW=-lgen CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	sgi )
+		EXTRA="DEFS=\"-fwritable-strings $ALLDEFS -DSVR4 -DADVLOCK -DRETSIGTYPE=void $DEFS\" PW=-lgen CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	hppa )
+		#
+		# No programmers workbench on hppa, so we fake it out
+		#
+		EXTRA="DEFS=\"-fwritable-strings $ALLDEFS -DHAVE_SELECT -DNO_ULONG -DNOL_SYSID -DADVLOCK -DRETSIGTYPE=void $DEFS\" PW= PW1=regcmp.o PW2=regex.o"
+		;;
+	alliant )
+		#
+		# No programmers workbench on suns, so we fake it out
+		#
+		EXTRA="DEFS=\"$ALLDEFS -DRETSIGTYPE=int -DTMPLOCK $DEFS\" PW= PW1=regcmp.o PW2=regex.o"
+		;;
+	*linux ) 
+		EXTRA="DEFS=\"$ALLDEFS -fwritable-strings -DHAVE_MALLOC_H -DNOL_SYSID -DADVLOCK -DRETSIGTYPE=void -DHAVE_SELECT $DEFS\" PW= PW1=regcmp.o PW2=regex.o"
+		;;
+	cygwin ) 
+		EXTRA="EXE=.exe DEFS=\"$ALLDEFS -fwritable-strings -DNOL_SYSID -DRETSIGTYPE=void -DHAVE_SELECT $DEFS\" PW= PW1=regcmp.o PW2=regex.o"
+		;;
+	darwin ) 
+		EXTRA="DEFS=\"-fwritable-strings $ALLDEFS -DNEED_TOUPPER -DADVLOCK -DNOL_SYSID -DRETSIGTYPE=void -DHAVE_SELECT $DEFS -DSYS_NMLN=1024\" PW= PW1=regcmp.o PW2=regex.o"
+		;;
+	* )
+		echo "$CMD: ERROR: unrecognized machine type '$MACH'" >&2
+		return 1
+		;;
+	esac
+
+	return 0
+}
+
+#
+# Definitions for New Unity products
+#
+nunity()
+{
+	HIGHMAKE=
+	IOSIZE=`grep "^$MACH	" ${UPONE}iosize | cut -d'	' -f2`
+	ALLDEFS="-DDBBLKSIZE=${IOSIZE:-4096}"
+
+	case "$MACH" in
+	ibm | uts4 )
+		EXTRA="DEFS=\"$ALLDEFS -DMACHINE=ibm -DSUPGRP -DTMPLOCK -DNGROUPS_MAX=16 $DEFS\" LIBMALLOC=-lmalloc"
+		;;
+	vax)
+		EXTRA="DEFS=\"$ALLDEFS -DMACHINE=vax -DTMPLOCK $DEFS\" LIBMALLOC=-lmalloc"
+		;;
+	3b2)
+		EXTRA="DEFS=\"$ALLDEFS -DRETSIGTYPE=void -DMACHINE=M3b2 -DTMPLOCK $DEFS\" LIBMALLOC=-lmalloc"
+		;;
+	mips | pyr )
+		EXTRA="DEFS=\"$ALLDEFS -DRETSIGTYPE=void -DMACHINE=$MACH -DTMPLOCK $DEFS\" LIBMALLOC=-lmalloc"
+		;;
+	i386 )
+		EXTRA="DEFS=\"$ALLDEFS -DRETSIGTYPE=void -DMACHINE=$MACH -DTMPLOCK $DEFS\" LIBMALLOC=-lmalloc"
+		;;
+	i486 )
+		EXTRA="DEFS=\"$ALLDEFS -DSVR4 -DADVLOCK -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW=-lgen LIBMALLOC=-lmalloc"
+		;;
+	3b20 )
+		EXTRA="DEFS=\"$ALLDEFS -DMACHINE=M3b20 -DTMPLOCK $DEFS\" LIBMALLOC=-lmalloc"
+		;;
+	sun3 | sparc )
+		#
+		# No regcmp command or -lPW on suns so we fake it out.
+		#
+		EXTRA="DEFS=\"-fwritable-strings $ALLDEFS  -Dstrtoul=strtol -DNEED_TOUPPER -DNO_ULONG -DNO_LIBGEN -DRETSIGTYPE=void -DMAXATT=500 -DMACHINE=$MACH $DEFS\" LIBPW= REGEXOBJS=\"regcmp.o regex.o\" REGCMP=\"cp redef.c regexpdef.re.c #\""
+		;;
+	solaris )
+		EXTRA="DEFS=\"-fwritable-strings $ALLDEFS -DSVR4 -DADVLOCK -DMAXATT=500 -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW= REGEXOBJS=\"regcmp.o regex.o\" REGCMP=\"cp redef.c regexpdef.re.c #\" CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	isolaris  )
+		EXTRA="DEFS=\"$ALLDEFS -DSVR4 -DADVLOCK -DMAXATT=500 -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW= REGEXOBJS=\"regcmp.o regex.o\" REGCMP=\"cp redef.c regexpdef.re.c #\" CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	solaris25 )
+		EXTRA="DEFS=\"$ALLDEFS -DSVR4 -DADVLOCK -DMAXATT=500 -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW=-lgen CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	sgi )
+		EXTRA="DEFS=\"-fwritable-strings $ALLDEFS -DSVR4 -DADVLOCK -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW=-lgen CPIOFLAGS=\"-oavHodc\" "
+		HIGHMAKE=CPIOFLAGS=\"-oavHodc\"
+		;;
+	hppa )
+		#
+		# No regcmp command or -lPW so we fake it out.
+		#
+		EXTRA="YACC=/usr/bin/yacc DEFS=\"-fwritable-strings $ALLDEFS -DNO_ULONG -DNOL_SYSID -DADVLOCK -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW= REGEXOBJS=\"regcmp.o regex.o\" REGCMP=\"cp redef.c regexpdef.re.c #\""
+		;;
+	alliant )
+		#
+		# No regcmp command or -lPW so we fake it out.
+		#
+		EXTRA="DEFS=\"$ALLDEFS -DRETSIGTYPE=int -DMACHINE=$MACH -DTMPLOCK $DEFS\" RANLIB=ranlib LIBPW= REGEXOBJS=\"regcmp.o regex.o\" REGCMP=\"cp redef.c regexpdef.re.c #\""
+		;;
+	cygwin )
+		#
+		# No regcmp command or -lPW so we fake it out.
+		#
+		EXTRA="EXE=.exe DEFS=\"$ALLDEFS -DNO_ULONG -DNO_LIBGEN -fwritable-strings -DNOL_SYSID  -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW= REGEXOBJS=\"regcmp.o regex.o\" REGCMP=\"cp redef.c regexpdef.re.c #\""
+		;;
+	darwin ) 
+		EXTRA="RANLIB=ranlib DEFS=\"-fwritable-strings $ALLDEFS -DNEED_TOUPPER -DNO_ULONG -DNO_LIBGEN -DADVLOCK -DNOL_SYSID -DRETSIGTYPE=void -DHAVE_SELECT $DEFS -DSYS_NMLN=1024\" REGEXOBJS=\"regcmp.o regex.o\" LIBPW= PW= PW1=regcmp.o PW2=regex.o REGCMP=\"cp redef.c regexpdef.re.c #\""
+		;;
+	*linux )
+		#
+		# No regcmp command or -lPW so we fake it out.
+		#
+		EXTRA="DEFS=\"$ALLDEFS -fwritable-strings -DHAVE_MALLOC_H -DNOL_SYSID -DADVLOCK -DRETSIGTYPE=void -DMACHINE=$MACH $DEFS\" LIBPW= REGEXOBJS=\"regcmp.o regex.o\" REGCMP=\"cp redef.c regexpdef.re.c #\""
+		;;
+	* )
+		echo "$CMD: ERROR: unrecognized machine type '$MACH'" >&2
+		return 1
+		;;
+	esac
+
+	return 0
+}
+
+if $ECHO; then
+	set -x
+fi
+
+set -e
+
+for MACH in $MACHLIST; do
+	#
+	# Set up Unity or New Unity definitions
+	# ($PRODUCT runs the unity() or nunity()
+	# function above)
+	#
+	if $PRODUCT; then
+		case "$LOCATION" in
+		local )
+			set +e
+			$NOOP make allsrc ${EXTRA:+"PASSDOWN=$EXTRA $MAKEARGS"} $HIGHMAKE
+			RC=$?
+			[ $RC -ne 0 ] && exit $RC
+			;;
+		subdir )
+			$NOOP eval make $EXTRA $MAKEARGS
+			RC=$?
+			[ $RC -ne 0 ] && exit $RC
+			;;
+		remote )
+			$NOOP rmake -punity -P ${UPONE}../unity/.unity	\
+				-s src.cpio -t $PRODUCT -m $MACH	\
+				${EXTRA:+"PASSDOWN='$EXTRA $MAKEARGS'"} \
+				$HIGHMAKE
+			RC=$?
+			[ $RC -ne 0 ] && exit $RC
+			;;
+		esac
+	fi
+done
+exit 0

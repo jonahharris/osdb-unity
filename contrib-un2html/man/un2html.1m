@@ -1,0 +1,127 @@
+.TH UN2HTML 1 "-VERSION- - 2.1.1.2" -PACKAGE- 
+.SH NAME
+UN2HTML -
+Convert unity to HTML
+.SH SYNOPSIS
+un2html [-I<Dfile_name>] [-M<mr_cgi>] [-C<carod_cgi>] [-i<imr_cgi>] [-A<CARES_cgi>] [-t<TABLE_options> [<anames> in] <UNITY database> [<UNITY_where_clause>]
+.SH DESCRIPTION
+Convert a unity database to a HTML table, that can be read by netscape.
+.sp
+The un2html program provides a printout of a UNITY table in
+HTML form for those records that satisfy the where condition. 
+.sp
+The following table constructs will be generated
+.nf
+<TABLE  [TABLE options] >
+<TH [TH options]> attribute header data </TH>
+<TR>
+<TD [TD options]> attribute data 1 </TD>
+  ..
+<TD [TD options]> attribute data n </TD>
+<TR> 
+  ..
+</TABLE>
+.fi
+.sp
+The 'TABLE options can be specified via the -t option on the command line.
+The TD and TH option can be specified per attribute. See 'Attribute options'
+section.
+.SH ATTRIBUTE OPTIONS
+After the attributes (anames) options can be specified using special 
+characters according the following syntax:
+.SP
+<attribute>[:<TH option>][!<TD option>][@<href spec>][^<Template spec>]
+.SP
+The options need always to be specified in the above given order.
+.SP
+.IP :<th_options> 5
+.sp
+Specify the TH directive options e.g. <ALIGN=center>.
+.IP !<td_options> 5
+.sp
+Specify the TD directive options e.g. <ALIGN=left>.
+.IP @<href_spec> 5
+.sp
+If a href_spec is given, the field will become a hyper link: 
+.br
+<a href="[href_spec]">attribute value</a>
+.sp
+In the href_spec all attributes can also be used from the current tuple
+by specifying the attribute name via ${<aname>}.
+(The {} should be present, so the $ is not allowed without the {}). '${%}'
+is a shorthand reference to the current attribute [part].
+.sp
+un2html tidnum stat@'cgi-bin/tst.cgi?tid=${tidnum}&stat=${%}' title in tstdb
+.sp
+Special dummy href specs can be given: %IC, %I, %C, %M.
+.br
+The behavior is equal as the normal @<href> construct except for every item
+in a ',' separated list the expansion is done. The current part of the 
+attribute should be referenced as ${%}.
+.sp
+IMR nr processing.
+When %I is specified the href spec from the -i option is used.
+.sp
+MR nr processing.
+When %M is specified the href spec from the -M option is used.
+.sp
+CAROD nr processing.
+When %C is specified the href spec from the -C option is used.
+.sp
+CARES AR nr processing.
+When %A is specified the href spec from the -A option is used.
+.sp
+IMR/CAROD/CARES nr processing.
+When %IC or %ICAis specified one of the href specs specified from -C or
+-i or -A option is selected. If the current attribute value has 6 digits and
+does not start with a 9 it is regarded as an IMR number. Else it is regarded
+as an carod number. If this carod number is 6 digits and starts with a 9;
+this 9 will be replaced with IH. If the carod number is 5 digits IH will
+be added. 
+.SP
+In case the IMR number starts with a 0 it is assumed to be a CARES AR ticket
+with 1-00<nr>   eg 012345 translates to 1-0012345
+.sp
+In other cases the carod number will be unchanged.
+.sp
+un2html -i 'cgi-bin/imr.cgi?imr=${%}&gen=${pcc}' imrno@%I pcc abstr in imrdb
+.sp
+The ^ and @ options are mutual exclusive.!
+.IP ^<template> 5
+The template will be the output. In the template the ${<aname>} construct can
+be used to insert attributes. (See href_spec for more details).
+The template can can be used e.g. to enclose the value by html tokens:
+.br
+un2html  imr 'abstract^<FONT SIZE="-1">${%}</FONT>' in imrdata
+.sp
+The ^ and @ options are mutual exclusive.!
+.SH OPTIONS
+.IP -h 5
+Give help
+.IP -Ii<data_file> 5
+Specification of a Dfile. Give here the name of the data file corresponding
+to the D file to use.  (The D file is constructed from the name of the
+data file - the data file doesn't actually have to exist.
+.IP -t<Table_directive_options> 5
+This option can be used if extra options need to be specified in the
+<TABLE options> directive, e.g. '-t border' to make a boxed table.
+.IP -i<imr_cgi> 5
+Specify the IMR cgi script definition (See @ attribute directive).
+.IP -M<mr_cgi> 5
+Specify the MR cgi script definition (See @ attribute directive).
+.IP -C<crd_cgi> 5
+Specify the CAROD cgi script definition (See @ attribute directive).
+.IP -A<cares_cgi> 5
+Specify the CARES AR cgi script definition (See @ attribute directive).
+.SH EXAMPLE
+$un2html -t'border width=80%' owner:align=center!align=center fa in RTP
+.br
+  where owner leq rdh >> out.html
+.sp
+$un2html -i'imr.cgi?imrno=${%}' -C'crd.cgi?crd=${%}' test 
+.br
+  status@'status.cgi?tidnum=${test}' imrno@%IC >> out.html
+.sp
+.SH "SEE ALSO"
+.SH BUGS
+

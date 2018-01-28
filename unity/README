@@ -1,0 +1,27 @@
+Below are the defines needed for the various kinds of
+machines.  They're explained in the makefile.
+
+ibm: "DEFS='-DMAXATT=200'"
+vax: "DEFS='-DTMPLOCK'"
+3b20: "DEFS='-DTMPLOCK'"
+3b2: "DEFS='-DRETSIGTYPE=void -DTMPLOCK'"
+pyramid: "DEFS='-DRETSIGTYPE=void -DTMPLOCK'"
+mips: "DEFS='-DRETSIGTYPE=void -DTMPLOCK'"
+
+# i386 - intel platforms SVR3
+i386: "DEFS='-DRETSIGTYPE=void -DTMPLOCK'"
+
+# i486 - intel platforms SVR4
+# programmers workbence is in libgen on SVR4
+i486: "DEFS='-DSVR4 -DRETSIGTYPE=void -DTMPLOCK' PW=-lgen"
+solaris: "DEFS='-DSVR4 -DRETSIGTYPE=void -DSUNOS' PW=-lgen"
+
+# No programmers workbench on older suns or hppa
+sun3 : "DEFS='-DRETSIGTYPE=void' PW= PW1=regcmp.o PW2=regex.o"
+sparc : "DEFS='-DRETSIGTYPE=void' PW= PW1=regcmp.o PW2=regex.o"
+hppa: "DEFS='-DRETSIGTYPE=void -DTMPLOCK' PW= PW1=regcmp.o PW2=regex.o"
+
+These should be passed to the make command in the PASSDOWN macro,
+for example:
+
+make installsrc PASSDOWN="DEFS='-DMAXATT=200'"

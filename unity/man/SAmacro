@@ -1,0 +1,7 @@
+.hy14
+.deSA
+.if\\n(.$ \{.if \\$1-1 .)D "SA:bad arg:\\$1"
+.nr:h 0\\$1 \}
+'na
+.if\\n(:h 'ad
+..

@@ -1,0 +1,13 @@
+#
+# Copyright (C) 2002 by Lucent Technologies
+#
+#
+
+#	@(#)Dpasswd	1.3
+login	t:	8l	LOGIN NAME
+passwd	t:	14l	PASSWORD
+uid	t:	5r	USER ID
+gid	t:	5r	GROUP ID
+acct	t:	20l	ACCOUNTING INFORMATION
+home	t:	15l	HOME DIRECTORY
+shell	t\n	12l	LOGIN SHELL

@@ -1,0 +1,6 @@
+CODE	MSG
+badlogin	login must be 3-8 characters
+nopasswd	entry must have a passwd
+baduid	uid must be 1-5 numeric characters
+badgid	gid must be 1-5 numeric characters
+badhome	home must not be null

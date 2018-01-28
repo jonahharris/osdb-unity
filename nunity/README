@@ -1,0 +1,155 @@
+Below is a brief description of what's in each directory:
+
+libmisc - General routines which are used by the NUNITY
+	code, but which are useful in and of themselves.
+	The NUNITY code needs only a few routines from this
+	library.  Normally, only these routines are built.
+	However, there is source code for many other routines.
+	They are provided on an as-is, no support, no warranty
+	basis in case others find them useful.  Look at the
+	libmisc makefile for directions on building these
+	functions.  Of course, you'll have to look at the
+	source files to see what functions are there.
+
+libunity - NUNITY database routines.
+
+cmds -	Shell-level NUNITY commands.
+
+hdr -	Header files needed accross multiple directories
+	and by applications using NUNITY.
+
+man -	Manual pages.  Man pages are included for the shell-level
+	commands, the descriptor file format, and the highest-level
+	C routines.  No attempt was made to provide manual pages
+	for all C routines.  This was somewhat deliberate to
+	provide a minimal level of protection from the user.
+	The following TM is available from ITDS giving more details
+	about NUNITY:  ``An Improved and Extended Implementation of
+	the UNITY Data Base Management System,'' July 25, 1989,
+	55634-890725-01TM, by E. D. Scott.
+
+'bin' and 'lib' directories are normally created as part of
+the installation procedures.
+
+There are two ways to build New UNITY.  The first is
+to run the script "umake" and tell it a machine type.  It will
+then set up the appropriate information, build, and install
+everything.
+
+For new machine types or versions of UNIX other than SysV,
+it may be necessary to edit the makefile(s) and set up the
+appropriate definitions and macros.  In this case, doing a
+"make install" in the this directory (after editing the
+makefiles) will build and install everything.
+
+Below are the #defines specifiable as part of the DEFS macro
+for 'make' which are passed to the compiler:
+
+DEBUG -	Include code for debugging purposes in DB code.
+	The debugging code is turned on by including the
+	flag "-debug" on the command line of each NUNITY
+	command.
+
+MACHINE	- Type of machine that the code is being built for.
+	It is used to set up machine dependent parameters,
+	such as the size of DB input buffer blocks.  The
+	current list of possible values (i.e., machines the
+	code has been built on) is:
+
+		ibm - IBM/Amdahl mainframe machines
+		m3b - 3b20 machines
+		m3b2 - 3b2 machines
+		vax - Vax machines
+		sun - (old) Sun machines
+		sparc - Sun sparc machines with SunOS 
+		solaris - Sun sparc machines with Solaris
+
+	NOTE:  Currently, the only reference to this #define is
+	in hdr/udbio.h.
+
+DBBLKSIZE - Size of DB input buffer blocks.  Normally, this is
+	set by indicating which machine type you are on.  The
+	default size is 4096.  For large mainframes it is set
+	to 10240.  For vaxen it is set to 6144.  (See hdr/udbio.h.)
+	This definition can affect the number of read calls (and
+	thus affect performance) and the amount of internal memory
+	fragmentation (since a block cannot be re-used until all
+	attribute values in the block are unused).
+
+RETSIGTYPE	- A portability definition.  Defines what signal catching
+	functions return.  Normally this is set to "int".
+	On some systems (3b2, suns), however, it must be defined
+	as "void".  (If this isn't defined properly, warnings
+	will be reported by the compiler, but the code functionality
+	is not NORMALLY affected.)
+
+TMPLOCK - Define to create lock files in /tmp based on the
+	inode and device numbers of the relation.  Leave
+	undefined to get lock files "L<relation>" in the
+	same directory as the relation.
+	Locks in /tmp don't work for NFS-mounted relations,
+	or for systems that have long inode numbers.
+
+NOTE:  There is only one #define for different operating systems.
+The code has been built under UNIX SysV R2 and R3, and SunOS,
+without need of one.  There was a SVR4 #define created for Solaris
+and i486, which is used only in where.y to suppress a warning.
+
+Below are 'make' macros which may be re-defined based on the
+availability of various libraries, etc.
+
+If the regex(3) and regcmp(3) routines are not available (normally
+in the Programmer's Workbench library, -lPW, or in -lgen on SVR4-type
+machines), or regcmp(1) is not available, do the following:
+
+	cp libunity/redef.c libunity/regexpdef.c
+
+This will bypass the need for regcmp(1), but is not guaranteed
+to work on all machines because of possible byte ordering differences.
+
+The following macros should also be modified in the indicated
+makefiles:
+
+MISCOBJS - (libmisc/makefile)  This specifies what objects
+	should be included in the libmisc.a library.  Re-define
+	it as
+
+		MISCOBJS = $(NORMOBJS) $(REGEXOBJS)
+
+	This will include the regular-expression routines
+	distributed with the package in the libmisc.a library.
+
+LIBPW -	(unity/makefile)  This specifies the options for the
+	Programmer's Workbench library.  Re-define it as
+
+		LIBPW =
+
+	This will not include the Programmer's Workbench library,
+	but use the routines from libmisc.a instead.
+
+	If regex(3) and regcmp(3) compatible routines are
+	available in a library other than '-lPW' then re-define
+	this macro appropriately.  For example, SVR4 (solaris,
+	i486) has them in -lgen, so set LIBPW=-lgen.
+
+If the malloc(3X) library is desired for memory allocation,
+instead of malloc(3C), then re-define the LIBMALLOC macro
+in unity/makefile appropriately.  malloc(3X) is a more robust
+version of malloc(3C).  No new functionality is provided, but
+there have been some unresolvable instances of core dumps using
+malloc(3C) which don't occur using malloc(3X).)
+
+Normally, the objects are optimized and the shell-level commands
+are stripped.  The STRIP macro (unity/makefile) can be re-defined
+as "STRIP=:" to avoid stripping commands.  Of course,
+CFLAGS can be redefined also, but be aware that it's normal
+definition ("-O -I$(HDR) $(DEFS)") contains other macros.
+
+After everything is built, the libraries will be in the "lib"
+directory, the executable commands will be in the "bin"
+directory, the manual pages will be in the "man" directory,
+and the header files will be in the "hdr" directory.
+
+The file NUNITY.NOTES contains a brief description of the
+changes that have been made in this release.
+

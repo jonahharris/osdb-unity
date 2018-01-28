@@ -1,0 +1,15 @@
+3b2	4096
+3b20	4096
+i386	4096
+i486	8192
+ibm	10240
+uts4	10240
+ilinux	8192
+mips	4096
+pyr	4096
+solaris	16384
+sparc	8192
+sun3	4096
+alliant	4096
+vax	6144
+hppa	8192

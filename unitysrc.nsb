@@ -1,0 +1,1685 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+
+nsbFile: 1
+generatedBy: NSBD version 1.6 patchlevel 2006/05/19 16:55:04
+generatedAt: Tue, 19 Sep 2006 15:45:44 GMT
+package: unitysrc
+version: 2.7
+updateParameters:
+    targets unity.cpio.gz
+    excludeCvs
+nsbUrl: rsync://www.bell-labs.com/wwexptools/sources/%P/%P.nsb
+topUrl: rsync://www.bell-labs.com/wwexptools/sources/%P
+regSubs:
+    ^ unity/
+paths:
+    Makefile
+	length: 6631
+	md5: 2e6bd58078cb6c620d65003984628397
+	mtime: 1158680376
+    unity.npd
+	length: 333
+	md5: 5ce80e74057e9eb2e11bf1d87b66746a
+	mtime: 1035924480
+    unitysrc.npd
+	length: 150
+	md5: b5d1341e9daca2e64079680e44058c70
+	mtime: 1108052966
+    unity/
+    unity/man/
+    unity/man/erase-index.mp
+	length: 72
+	md5: 0bd95c9d4cee73d0571c87f136204b2f
+	mtime: 1088623424
+    unity/man/Contents.mp
+	length: 5455
+	md5: c487cd39c45043c01fc95e68ae37906d
+	mtime: 1088623429
+    unity/man/Index.mp
+	length: 19039
+	md5: 6ac468996457bda45ee1a46c5da2cfc7
+	mtime: 1088623434
+    unity/man/Intro.mp
+	length: 41966
+	md5: a46df91963c1f450b47bcd7f2c8c1bfa
+	mtime: 1088623438
+    unity/man/SAmacro
+	length: 93
+	md5: c8475da1f1ee920a8753a41c9ac7aa09
+	mtime: 920323769
+    unity/man/Uinthl.mp
+	length: 6162
+	md5: 62f537da5f48b1f8607882b19b6ecc85
+	mtime: 1088623442
+    unity/man/Uintll.mp
+	length: 11316
+	md5: 1b23d58116838470588880e12a18669e
+	mtime: 1088623445
+    unity/man/alter.mp
+	length: 7139
+	md5: dcd3a51b5382ae11e7a2aaf2b25971a4
+	mtime: 1088623449
+    unity/man/asort.mp
+	length: 10427
+	md5: 52a945f4c79638f8362c0d74c92a2aeb
+	mtime: 1088623452
+    unity/man/catalog.mp
+	length: 14572
+	md5: 374508c48d70031f4d0cdf2ca75f8329
+	mtime: 1088623456
+    unity/man/compute.mp
+	length: 10388
+	md5: 77c004aed7d84b9a0217da428d15c87f
+	mtime: 1088623460
+    unity/man/ddist.mp
+	length: 70
+	md5: 8893b0204709f854c2f1715549ca3637
+	mtime: 1088623466
+    unity/man/dist.mp
+	length: 9105
+	md5: 04ad25334911e7accb6a9d3d9c256aed
+	mtime: 1088623469
+    unity/man/dtally.mp
+	length: 74
+	md5: 9b075b34faed05dd987775f486211fa4
+	mtime: 1088623476
+    unity/man/ei.mp
+	length: 1247
+	md5: 2033943f3e15a2aadd5d1f069383496a
+	mtime: 1088623481
+    unity/man/erase-table.mp
+	length: 68
+	md5: 09317cf68c912a69536f1ad882c37f7f
+	mtime: 1088623485
+    unity/man/et.mp
+	length: 1173
+	md5: 030ab67f38dd5e704e68ac29fa265849
+	mtime: 1088623489
+    unity/man/insert.mp
+	length: 9350
+	md5: 744eff88020447f9a52b7832008eac28
+	mtime: 1088623492
+    unity/man/load.mp
+	length: 3197
+	md5: cb2aff4171df7ad10ebb293c52151eb3
+	mtime: 1088623495
+    unity/man/makefile
+	length: 1801
+	md5: 8f1b8209ac7f811e3313545cc1179514
+	mtime: 1036089220
+    unity/man/maketable.mp
+	length: 9270
+	md5: 86ded6732d8e57b3400288962450c2d4
+	mtime: 1088623500
+    unity/man/merge.mp
+	length: 6411
+	md5: b045cbf277c17a92ee29037f575f2816
+	mtime: 1088623505
+    unity/man/nprintf.mp
+	length: 16033
+	md5: 304f053957c5e36aff724fbcd8d939e4
+	mtime: 1088623509
+    unity/man/outerjoin.mp
+	length: 8519
+	md5: d2b08170dc21c93d1a2ab3acd7660895
+	mtime: 1088623512
+    unity/man/packet.mp
+	length: 4667
+	md5: 9fd97bcf971f7616b4c75341f78e584e
+	mtime: 1088623515
+    unity/man/regjoin.mp
+	length: 6792
+	md5: 584855b6a1920e3bbeaf82d99c999e92
+	mtime: 1088623521
+    unity/man/setdiff.mp
+	length: 7820
+	md5: 6cf6441818120b8225789dbbc742bef6
+	mtime: 1088623525
+    unity/man/stat.mp
+	length: 6439
+	md5: 1a9a8f96aadb1a0cb039b690857e811f
+	mtime: 1088623529
+    unity/man/table.mp
+	length: 8410
+	md5: 496172ad86ff576ff2ad78315ad82fa2
+	mtime: 1088623533
+    unity/man/tally.mp
+	length: 70
+	md5: 8893b0204709f854c2f1715549ca3637
+	mtime: 1088623536
+    unity/man/tuple.mp
+	length: 5697
+	md5: 68f690315fd1bff3c4c2dfd37a242d24
+	mtime: 1088623539
+    unity/man/uadmin.mp
+	length: 2952
+	md5: 16ba67e15b0e049ac91fe55f5b104592
+	mtime: 1088623543
+    unity/man/ucheck.mp
+	length: 5434
+	md5: c5f7c7e028be833d61b842752f39d7f0
+	mtime: 1088623548
+    unity/man/udelete.mp
+	length: 6165
+	md5: 356d48910d6e6278d1ffe55d117940bd
+	mtime: 1088623552
+    unity/man/udelta.mp
+	length: 2210
+	md5: bbcf3810ac06ce6d45d4a65ef7dcaa1c
+	mtime: 1088623555
+    unity/man/udis.mp
+	length: 74
+	md5: 1c7914a4c71150071ac27ca0ab4c4d42
+	mtime: 1088623559
+    unity/man/udisplay.mp
+	length: 6463
+	md5: e45f7d7a5c9c2ae4bad616c73f0a9f04
+	mtime: 1088623562
+    unity/man/uedit.mp
+	length: 9037
+	md5: 8fc859bd7e526d00ef1e11d5b1b00336
+	mtime: 1088623564
+    unity/man/uenter.mp
+	length: 8483
+	md5: 4db99a1fe253e21c5e98a443b4e5891b
+	mtime: 1088623569
+    unity/man/uformat.mp
+	length: 7947
+	md5: 42d6277a38588f26c86d6dc15ce948c2
+	mtime: 1088623573
+    unity/man/uget.mp
+	length: 2011
+	md5: de2ebbaf550f28b7dea2f02c9f8e9127
+	mtime: 1088623578
+    unity/man/uindex.mp
+	length: 10634
+	md5: f8499b1f6c8f59682f27f60bdd74685a
+	mtime: 1088623582
+    unity/man/ujoin.mp
+	length: 8082
+	md5: 9e69e183643b5f2ca3acd3b22b6f4ea0
+	mtime: 1088623589
+    unity/man/uman.mp
+	length: 1242
+	md5: ec6e96a24aa2e2ac9aa59f309f20477e
+	mtime: 1088623594
+    unity/man/umenu.mp
+	length: 10843
+	md5: e554cbdd54bad062b6569e0aa5007f28
+	mtime: 1088623597
+    unity/man/unity.mp
+	length: 1582
+	md5: 490b8f7d7921f15ff92a05fa1c2b0d0c
+	mtime: 1088623601
+    unity/man/unload.mp
+	length: 786
+	md5: 644dc070918b96a5b338f2af69303e40
+	mtime: 1088623604
+    unity/man/unmerge.mp
+	length: 71
+	md5: 7dc5869d38860dc8a6d2ae86a3cc515a
+	mtime: 1088623607
+    unity/man/uprint.mp
+	length: 23006
+	md5: 2f1a520e30c18d90bcb388771c1959db
+	mtime: 1088623613
+    unity/man/uprintf.mp
+	length: 9891
+	md5: 6d3dc88ce69e44ee1a3b3496a65f934d
+	mtime: 1088623616
+    unity/man/uselect.mp
+	length: 6657
+	md5: 897ff692183caf939906120e70ea76fd
+	mtime: 1088623620
+    unity/man/val.mp
+	length: 31847
+	md5: 6d2b3a418b4c9b4633b0e0b46b38094f
+	mtime: 1088623623
+    unity/man/valcmp.mp
+	length: 2796
+	md5: a24732bbb4941c24986f1c73cd7e1105
+	mtime: 1088623625
+    unity/man/validate.mp
+	length: 7342
+	md5: b91402495c52c418c1fc410c28798fb0
+	mtime: 1088623628
+    unity/src/
+    unity/src/catalog.c
+	length: 1228
+	md5: 54fba1f655318a4b008e2a6e3a501553
+	mtime: 1088623637
+    unity/src/Dpasswd
+	length: 240
+	md5: 0efedf0474ae9970628ae0c73fc79ba5
+	mtime: 1088623648
+    unity/src/Epasswd
+	length: 195
+	md5: 089a56bda593de94574df4abe61f26e8
+	mtime: 920323766
+    unity/src/Vpasswd
+	length: 286
+	md5: c8a12e18f2e9de5a50df11e158ed9794
+	mtime: 1088623653
+    unity/src/alter.c
+	length: 1226
+	md5: 7c277fa00b24cb2b499b5b3fea007cf8
+	mtime: 1088623660
+    unity/src/asort.c
+	length: 1181
+	md5: 58b4610e6d78b76f1d0d8ef9db203716
+	mtime: 1088623664
+    unity/src/bopen.c
+	length: 1226
+	md5: 90ef68d6d0116c301cda33859772d59f
+	mtime: 1088623673
+    unity/src/chkaccess.c
+	length: 6119
+	md5: 5290652ad65f6d835675c4217988300c
+	mtime: 1088623678
+    unity/src/check.c
+	length: 4642
+	md5: d8e03f8022b41c8c394ff6194a881f9e
+	mtime: 1088623683
+    unity/src/cnvtdate.c
+	length: 11926
+	md5: e22c649c4dac962f709955968fdee800
+	mtime: 1088623687
+    unity/src/compute.c
+	length: 1228
+	md5: 7858dd0a67381264592cb894c474c85d
+	mtime: 1088623692
+    unity/src/copy.c
+	length: 1829
+	md5: 75d9fa66457f7a4d46e43d2f6d35b64a
+	mtime: 1088623696
+    unity/src/db.h
+	length: 4143
+	md5: efbadf933af1f5759167230ec451ed8a
+	mtime: 1088623701
+    unity/src/ddist.c
+	length: 1226
+	md5: 6d8b69bb3dceda77d737b6468f6ae61c
+	mtime: 1088623705
+    unity/src/descrinfo.c
+	length: 3668
+	md5: e2e2d3a26050a24173a228f77ad2afdd
+	mtime: 1088623710
+    unity/src/dirname.c
+	length: 891
+	md5: 03f1f125994f934e204ae488554bd30e
+	mtime: 1088623713
+    unity/src/dist.c
+	length: 1225
+	md5: bfd7a66350226d369053b0d66374741d
+	mtime: 1088623718
+    unity/src/edfile
+	length: 41
+	md5: d05f0e35b48065021d1c6d4997c43996
+	mtime: 920323767
+    unity/src/ei.c
+	length: 558
+	md5: dac2cb12922b54eadbaa47123c0ca942
+	mtime: 1088623722
+    unity/src/error.c
+	length: 2043
+	md5: bd3a58f01de69432b73bd57d7c711e36
+	mtime: 1088623725
+    unity/src/error.c.O
+	length: 1644
+	md5: 7ba8437a9155b1322e6b6c19d5218473
+	mtime: 1088623729
+    unity/src/et.c
+	length: 558
+	md5: 42240b96b0a530d6f68605e9e2f04c85
+	mtime: 1088623733
+    unity/src/getfile.c
+	length: 6373
+	md5: 55d6a0e323c79cc5b1c5884ed6f80dd2
+	mtime: 1088623738
+    unity/src/getop.c
+	length: 9560
+	md5: ee4089533c015608285b7fe9770f848f
+	mtime: 1088623742
+    unity/src/getrec.c
+	length: 2849
+	md5: 24b0a20953f6cb1b590b0c986e90efd6
+	mtime: 1088623746
+    unity/src/index2.c
+	length: 649
+	md5: 8d8d84ee0a3975f6377a7f48dfcb1a57
+	mtime: 1088623751
+    unity/src/indexch.c
+	length: 2177
+	md5: 575ad9fc6afe7a9118616bd671a9c9a8
+	mtime: 1088623755
+    unity/src/insert.c
+	length: 1182
+	md5: 8520a24defa3c39cff905fb2521b0d94
+	mtime: 1088623758
+    unity/src/load.c
+	length: 1180
+	md5: 97f93a47726575a84ffe5252a53262b9
+	mtime: 1088623765
+    unity/src/makefile
+	length: 6546
+	md5: ed3a0be7dfe3e66c3d37fc1e9fb4e963
+	mtime: 1088623771
+    unity/src/maketable.c
+	length: 1135
+	md5: 31dc74f545e8a93b86839bd5e4972d0f
+	mtime: 1088623775
+    unity/src/merge.c
+	length: 1226
+	md5: ff82cef77071befa3ed4c54c8e412f11
+	mtime: 1088623779
+    unity/src/mklock.c
+	length: 17742
+	md5: 64c68ce07a33e1f9ba4cc6cc609c98cb
+	mtime: 1088623783
+    unity/src/mktbl.c
+	length: 8125
+	md5: 863078b95328c9321e86b95aa2aeceb8
+	mtime: 1143127114
+    unity/src/mktbl2.c
+	length: 1248
+	md5: 477b70eefee2ebb0a59d2205492c45ce
+	mtime: 1088623789
+    unity/src/mvgbt.c
+	length: 664
+	md5: 8f9d3173660569dff4225b9f2f5375ed
+	mtime: 1088623793
+    unity/src/ndcheck.c
+	length: 589
+	md5: 1467d5438136e47043d7dbd702c317ff
+	mtime: 1088623796
+    unity/src/ndread.c
+	length: 803
+	md5: 9ed9c5198c0fa3060ca83b024cf5d150
+	mtime: 1088623800
+    unity/src/nprintf.c
+	length: 1228
+	md5: d78feb2e322c9a092b2b70ed6799786c
+	mtime: 1088623804
+    unity/src/packet.c
+	length: 1182
+	md5: fb012b3ad54cb0f1084185de25c800ba
+	mtime: 1088623807
+    unity/src/passwd
+	length: 629
+	md5: 2294ad0bca6d54d74a2677a65bb64e7d
+	mtime: 920323767
+    unity/src/putrec.c
+	length: 5028
+	md5: 3cb3f0fccbff4586e1e219e9b7fc0088
+	mtime: 1088623810
+    unity/src/rdindexed.c
+	length: 1196
+	md5: d597a2a99233673d2cbaceccb7e2ae45
+	mtime: 1088623813
+    unity/src/rdnext.c
+	length: 1323
+	md5: e1f49d39541ba182e7fc1d63c99934d8
+	mtime: 1088623817
+    unity/src/regcmp.c
+	length: 4749
+	md5: 131d1aa37f281208efa3e1996aa441b0
+	mtime: 1088623820
+    unity/src/regex.c
+	length: 6269
+	md5: cdab6266d6a4b14ac6ca1308fb1225bd
+	mtime: 1088623824
+    unity/src/regexp.c
+	length: 8141
+	md5: d098cdf38ac75278d59f075e8fcee334
+	mtime: 1088623828
+    unity/src/regexp.h
+	length: 6366
+	md5: fdd3e6fa01ee111f5211a0e4b8a33007
+	mtime: 1088623833
+    unity/src/scan.c
+	length: 1066
+	md5: 005da6f91bd8683c1ed3573bb0f955a2
+	mtime: 1088623837
+    unity/src/setdiff.c
+	length: 1183
+	md5: 5de1c6de35f5ff5e1ca84c8967b73e00
+	mtime: 1088623840
+    unity/src/setnum.c
+	length: 628
+	md5: 44c43ae4b4748f31062dba6dac50421c
+	mtime: 1088623844
+    unity/src/sprintfb.c
+	length: 3749
+	md5: 82d56ab8cf159c879f1c84c5d09081bf
+	mtime: 1088623848
+    unity/src/stat.c
+	length: 1226
+	md5: a3ed09495a377ed8d009567d72f4ce37
+	mtime: 1088623851
+    unity/src/table.c
+	length: 1181
+	md5: 0280277f037151ede196d647377c1d97
+	mtime: 1088623855
+    unity/src/tuple.c
+	length: 1181
+	md5: 243892c1f1b6c87cf1f526c27a6aa277
+	mtime: 1088623861
+    unity/src/uadmin.c
+	length: 1132
+	md5: 1f6ed034f460cb68ebf9f8b047029a2e
+	mtime: 1088623864
+    unity/src/ucheck.c
+	length: 694
+	md5: 4a8dbab6af1e41716e33b1ac46e09192
+	mtime: 1088623868
+    unity/src/uclean.c
+	length: 2448
+	md5: 092f09b8e90ff14457b5406c66020950
+	mtime: 1088623872
+    unity/src/udelete.c
+	length: 1227
+	md5: 0c9b0bc920ae98cab16eb95a99cd2e5e
+	mtime: 1088623879
+    unity/src/udelta.c
+	length: 1132
+	md5: bf5fb3c0450f5e22727f5164fb2aabba
+	mtime: 1088623882
+    unity/src/udis.c
+	length: 691
+	md5: 17dac39214ed0b5006a342b4446f3689
+	mtime: 1088623885
+    unity/src/uedit.c
+	length: 1181
+	md5: 62ca5f536b93eb5872dba5da4bb1a8d9
+	mtime: 1088623889
+    unity/src/uenter.c
+	length: 1182
+	md5: 2401dcade7df41d9be1e70d3ce489fca
+	mtime: 1088623893
+    unity/src/uexpr.c
+	length: 20535
+	md5: 019942c4a5877d0c7169489c37bbac3a
+	mtime: 1088623897
+    unity/src/uformat.c
+	length: 1227
+	md5: aaab181149b7ac275c69bd39bbd65403
+	mtime: 1088623900
+    unity/src/uget.c
+	length: 1130
+	md5: af0d6144feec54497fca835f689ed02d
+	mtime: 1088623904
+    unity/src/uindex.c
+	length: 647
+	md5: ee6cb56d34d61e475a09391045009b69
+	mtime: 1088623909
+    unity/src/ujoin.c
+	length: 1341
+	md5: 33377c30ee11ed584008839e8f6d3f9d
+	mtime: 1088623912
+    unity/src/uman.sh
+	length: 290
+	md5: b4c685d85e0d991406f8d770c444dd7b
+	mtime: 1088623918
+    unity/src/umenu.c
+	length: 23544
+	md5: 6ee8eac5e13e72dd317cde38f3340d84
+	mtime: 1092162415
+    unity/src/unity.sh
+	length: 828
+	md5: 4a77056545837605eaa49fb73d18ead3
+	mtime: 1035905933
+    unity/src/unload.c
+	length: 1182
+	md5: 0321736abb7bac6e590460d3f00e8e7d
+	mtime: 1088623926
+    unity/src/unmerge.c
+	length: 1228
+	md5: 3a747022a74ded9154eca403ed57f009
+	mtime: 1088623930
+    unity/src/uprint.c
+	length: 619
+	md5: dc54906582dc379842339d2863da83b2
+	mtime: 1088623933
+    unity/src/uprintf.c
+	length: 1228
+	md5: 7ddcb2e0ab9efd5948a28e75a3c586f1
+	mtime: 1088623938
+    unity/src/uselect.c
+	length: 1183
+	md5: 4b686d45c86489e5fc8c86ddb5875626
+	mtime: 1088623941
+    unity/src/val.c
+	length: 14079
+	md5: ee01693c3b3a50cfac4fc338b5180d73
+	mtime: 1092161959
+    unity/src/val.c.O
+	length: 13655
+	md5: fbd9a221f4ef4863cf20ba1a179f12e8
+	mtime: 1088623953
+    unity/src/val.h
+	length: 1254
+	md5: 356aa256625d64a44dc06ba5c7f4f536
+	mtime: 1088623959
+    unity/src/valcmp.y
+	length: 24171
+	md5: 11aea63261718486272dba0051c5402e
+	mtime: 1088624919
+    unity/src/validate.c
+	length: 11805
+	md5: 88ce77eed1ce31a4b5866e5dc618ca41
+	mtime: 1088623975
+    unity/src/valload.c
+	length: 2079
+	md5: bd5949ddb7117a6a4c0879ebed517c30
+	mtime: 1088623979
+    unity/src/where.c
+	length: 15144
+	md5: 95a5f5e3cade88bafeed81069d8c9d55
+	mtime: 1143042231
+    unity/src/zalter.c
+	length: 17296
+	md5: 7fd891e38e61f0e38d14cbc65795aa55
+	mtime: 1088623987
+    unity/src/zasort.c
+	length: 8682
+	md5: fd30a360df1c7a69f8fa4d1fce100f5f
+	mtime: 1088623990
+    unity/src/zcatalog.c
+	length: 21366
+	md5: b87ff4e1a194be1a6917956b1662907f
+	mtime: 1088623995
+    unity/src/zcompute.c
+	length: 21292
+	md5: f757026766eb500b92d4f7476d9d4241
+	mtime: 1088624001
+    unity/src/zddist.c
+	length: 21615
+	md5: 7b75134ab602005654938f159b8c2111
+	mtime: 1088624004
+    unity/src/zdelete.c
+	length: 12301
+	md5: b4d0b02e7d7025976d5fd93884c43558
+	mtime: 1088624008
+    unity/src/zdis.c
+	length: 5653
+	md5: 2350667e17972de3ddbc12c8db4b1fcd
+	mtime: 1088624012
+    unity/src/zdist.c
+	length: 14394
+	md5: a4094cda16c294a2b2d828fc0b0cebba
+	mtime: 1088624015
+    unity/src/zei.c
+	length: 1069
+	md5: deb27e229527882c93c22765413785f1
+	mtime: 1088624019
+    unity/src/zet.c
+	length: 1255
+	md5: 71ea1708945eb3402e9cdfd6b478390a
+	mtime: 1088624022
+    unity/src/zformat.c
+	length: 7813
+	md5: adbcf72d6d17ec447440e498c96d000f
+	mtime: 1088624026
+    unity/src/zindex.c
+	length: 10237
+	md5: ba27d3b879823357104e8e9a2cd69114
+	mtime: 1088624030
+    unity/src/zindex2.c
+	length: 2671
+	md5: 980bbbdb6bc7ad32dfc4ef18e0f4ad7f
+	mtime: 1088624069
+    unity/src/zinsert.c
+	length: 18541
+	md5: 26dbf2fb081003fa762d5377dccb88a5
+	mtime: 1088624072
+    unity/src/zload.c
+	length: 3101
+	md5: 66bcca5629ab18501279ab49f799c7a1
+	mtime: 1088624076
+    unity/src/zmaketable.c
+	length: 4034
+	md5: 6eb50def97c006b8b4d2b23f107c4cb3
+	mtime: 1088624079
+    unity/src/zmerge.c
+	length: 12467
+	md5: 2f876310f8f96afd094e5c26f8a8b701
+	mtime: 1088624082
+    unity/src/znprintf.c
+	length: 42137
+	md5: 7e2600b8f4a2276b136e5759c5fe3c61
+	mtime: 1088624086
+    unity/src/zpacket.c
+	length: 6801
+	md5: 689ba412fd1fda0eec7cf2305c1e26ce
+	mtime: 1088624089
+    unity/src/zsetdiff.c
+	length: 12790
+	md5: ebebb70dca0690602e47c25b933961d8
+	mtime: 1088624093
+    unity/src/zstat.c
+	length: 12893
+	md5: 337c38925c313763b0d649c7c73f7169
+	mtime: 1088624097
+    unity/src/ztable.c
+	length: 2125
+	md5: 5ef31e62801922fec669e163eb92d7ed
+	mtime: 1088624101
+    unity/src/ztuple.c
+	length: 10788
+	md5: 3f3ca5dc0262c03ee8b0ca818d67fb18
+	mtime: 1158677129
+    unity/src/zuadmin.c
+	length: 7069
+	md5: d22039381f9ad0f90eb30aeaf15c899c
+	mtime: 1088624111
+    unity/src/zucheck.c
+	length: 2604
+	md5: e054c29658c91f317c0d9a754321c9fd
+	mtime: 1088624115
+    unity/src/zuedit.c
+	length: 11790
+	md5: 59f36fbf61dd561e34baeb97cac11244
+	mtime: 1088624119
+    unity/src/zuenter.c
+	length: 7868
+	md5: 15f300db7bef20874910374dceaf4ed5
+	mtime: 1088624122
+    unity/src/zuget.c
+	length: 3573
+	md5: e5a779aec95c7346ebce791e6fe745ce
+	mtime: 1088624128
+    unity/src/zujoin.c
+	length: 26190
+	md5: 60d3486047097b62d6cdc10313a7099e
+	mtime: 1088624131
+    unity/src/zunload.c
+	length: 1090
+	md5: 3f767e8cf78578cc41e8fbb310225f67
+	mtime: 1088624134
+    unity/src/zunmerge.c
+	length: 9728
+	md5: 522645789ee729dccf4f14bede317868
+	mtime: 1088624138
+    unity/src/zuprint.c
+	length: 34785
+	md5: de892ca0d76c47544a452b3dbadeb2ce
+	mtime: 1092149150
+    unity/src/zuprintf.c
+	length: 28000
+	md5: 65071e300ad30182700b5ec4b76bac58
+	mtime: 1088624144
+    unity/src/zuprintf.c.O
+	length: 27513
+	md5: 453ba3250977fd78bbe1f46cf2ed12e6
+	mtime: 1088624151
+    unity/src/zuselect.c
+	length: 13190
+	md5: 5ef4e3f23d7d5483681e1b03ba97968b
+	mtime: 1088624154
+    unity/BUGLIST
+	length: 1737
+	md5: ec403c25dc4d9aa1187bd4fa48eff352
+	mtime: 920323772
+    unity/README
+	length: 954
+	md5: 2dd28be5d92a60a674433b3350dae73c
+	mtime: 1059599490
+    unity/WISHLIST
+	length: 40
+	md5: 7ed3a2ad7a3ab96aec28373d0868e638
+	mtime: 920323772
+    unity/iosize
+	length: 158
+	md5: cb193951463a599bf0988f92a9de1c4c
+	mtime: 941818149
+    unity/makefile
+	length: 4563
+	md5: 38d4e4593317679c2cc78ef00866b9e3
+	mtime: 1059599490
+    unity/mkunity
+	length: 7251
+	md5: 083162735e65243588c3abf553b764a5
+	mode: rwx
+	mtime: 1088624164
+    unity/ranlib
+	length: 0
+	md5: d41d8cd98f00b204e9800998ecf8427e
+	mode: rwx
+	mtime: 920323772
+    unity/umake
+	length: 9741
+	md5: 0a4abcaa7010fe565e8b78121d83d7ab
+	mode: rwx
+	mtime: 1108056609
+    nunity/
+    nunity/cmds/
+    nunity/cmds/cmpquery.c
+	length: 8653
+	md5: 6cdf2ca34b80076717e0e8725798238c
+	mtime: 1088624173
+    nunity/cmds/format.h
+	length: 1418
+	md5: b960228277c701387b247d8f352593d7
+	mtime: 1088624178
+    nunity/cmds/genheader.c
+	length: 4401
+	md5: a2b9cdfb81abd4c0c8315f4b907387e5
+	mtime: 1088624181
+    nunity/cmds/genquery.c
+	length: 29221
+	md5: 7cbb550fa92b3cdbb0f06779fea56c85
+	mtime: 1088624184
+    nunity/cmds/getrec.c
+	length: 8503
+	md5: a26f89fbd998394f404f28b027493ef1
+	mtime: 1088624189
+    nunity/cmds/makefile
+	length: 6717
+	md5: 557250cef5caeb4f38d2c307e7de7a89
+	mtime: 1059599490
+    nunity/cmds/nalter.c
+	length: 54418
+	md5: fa9814bbcb0712d4477a9b4ee88bfa52
+	mtime: 1092173243
+    nunity/cmds/ndelete.c
+	length: 10540
+	md5: e6f8befa45034a2c3a18e1f4042b7a12
+	mtime: 1088624197
+    nunity/cmds/ninsert.c
+	length: 29966
+	md5: 59005c460241f488580143543405f22f
+	mtime: 1092161592
+    nunity/cmds/nuedit.c
+	length: 16160
+	md5: e85dc9defc8639ba1ec2ba062ae648d6
+	mtime: 1088624204
+    nunity/cmds/prblock.c
+	length: 16910
+	md5: 7fda2db41927c6cec2d144cfe864b9f1
+	mtime: 1088624207
+    nunity/cmds/prindex.c
+	length: 1971
+	md5: c9b4d5186cf30b00e97fceb47bc9ecef
+	mtime: 1088624210
+    nunity/cmds/prtable.c
+	length: 27750
+	md5: 023c40d987c5f23beb53a5d95ffd219d
+	mtime: 1092161299
+    nunity/cmds/qprintf.c
+	length: 10950
+	md5: 94b5550abbf8467702db1e5156f5ed8b
+	mtime: 1088624218
+    nunity/cmds/retrieve.c
+	length: 27412
+	md5: 1b257b51e7d62875c5ccdde1bed551e4
+	mtime: 1092161361
+    nunity/cmds/rmulock.c
+	length: 3386
+	md5: bb52053310dfae40633de5be4c150f70
+	mtime: 1088624232
+    nunity/cmds/seekval.c
+	length: 6731
+	md5: 39901da2df8f573d4e8d51698523191e
+	mtime: 1088624235
+    nunity/cmds/seekval.h
+	length: 925
+	md5: 92becdead64f2f2f14cb68612e0cea62
+	mtime: 1088624240
+    nunity/cmds/udiff.c
+	length: 22324
+	md5: 0868e8b38bc1bb85ea78a93a0ee2482a
+	mtime: 1092161436
+    nunity/cmds/ulock.c
+	length: 14508
+	md5: c3512a5f9e6df21b8930498a685dc9f2
+	mtime: 1088624247
+    nunity/cmds/umerge.c
+	length: 92385
+	md5: ba4b6a72caec4e7e63f23d4986cf4725
+	mtime: 1092161480
+    nunity/cmds/usort.c
+	length: 17864
+	md5: 1112f94aea728f9590059d5cbe1e4942
+	mtime: 1092161508
+    nunity/hdr/
+    nunity/hdr/message.h
+	length: 1942
+	md5: 9b9bd6fbcc75ab0588b1a51fa6fb5d57
+	mtime: 1088624258
+    nunity/hdr/permission.h
+	length: 197
+	md5: 72c402b28e1a8f9d1d0d9a4894f05f6b
+	mtime: 1088624271
+    nunity/hdr/udbio.h
+	length: 1937
+	md5: 0d556bb9ad1f950e0e5dce3e2f23874a
+	mtime: 1088624275
+    nunity/hdr/uerror.h
+	length: 3225
+	md5: a5d65e9d3a0c2b4edd3246fb8059ab81
+	mtime: 1088624278
+    nunity/hdr/uindex.h
+	length: 1507
+	md5: f2b4df7a3ee213ada8bcfca52107333e
+	mtime: 1088624284
+    nunity/hdr/uquery.h
+	length: 16430
+	md5: d920b14f8db38ae3ca37a568005f15ea
+	mtime: 1088624287
+    nunity/hdr/urelation.h
+	length: 5767
+	md5: ac059574c38058037fbdde9ace472643
+	mtime: 1088624291
+    nunity/libmisc/
+    nunity/libmisc/basename.c
+	length: 769
+	md5: a5f2425e04231adaa62d2495f1e9eefc
+	mtime: 1088624298
+    nunity/libmisc/chkperm.c
+	length: 5149
+	md5: aca21eec2e2889ddd5c034165fed65ae
+	mtime: 1088624304
+    nunity/libmisc/cntflds.c
+	length: 738
+	md5: 40a3b409539cc8e249d96dd6f56447c7
+	mtime: 1088624308
+    nunity/libmisc/cntsflds.c
+	length: 780
+	md5: dc613efcbf3eeaad94d86e5f34af4519
+	mtime: 1088624312
+    nunity/libmisc/cnvtbslsh.c
+	length: 1594
+	md5: 258e18e443b6c6c80b4ad4745b9fbb71
+	mtime: 1088624316
+    nunity/libmisc/copydest.c
+	length: 732
+	md5: 0182fd75c50a2470d4e7596e97c659e2
+	mtime: 1088624320
+    nunity/libmisc/copyfile.c
+	length: 817
+	md5: 9759b6ded59d5600b893a5bf4e51fe21
+	mtime: 1088624323
+    nunity/libmisc/copyfp.c
+	length: 883
+	md5: a06a806450f6e04df8c85173ce8526a9
+	mtime: 1088624327
+    nunity/libmisc/copysrc.c
+	length: 692
+	md5: 6c22fbdf2912c0f710080f5b0bfdd017
+	mtime: 1088624330
+    nunity/libmisc/cpdirname.c
+	length: 854
+	md5: 945793f316bc659ffb1ff4a3653ad579
+	mtime: 1088624333
+    nunity/libmisc/cstrprt.c
+	length: 1488
+	md5: 841875cf4a2dbce652c9a29a0a110f3f
+	mtime: 1088624344
+    nunity/libmisc/dirname.c
+	length: 838
+	md5: 58a47fe401b6084b09b21f6d5d1bf31d
+	mtime: 1088624347
+    nunity/libmisc/expandvar.c
+	length: 5744
+	md5: d3f47e3463ccc82cd815f1b6aeee1fa2
+	mtime: 1088624354
+    nunity/libmisc/exprange.c
+	length: 2518
+	md5: 642b582c47797b887a7547c1568bd80b
+	mtime: 1088624359
+    nunity/libmisc/getcwd.c
+	length: 2963
+	md5: 9f98d1e971f930a73fbf7ef06fd5c312
+	mtime: 1088624363
+    nunity/libmisc/getdate.c
+	length: 773
+	md5: 1c95dcea0b4a56bc94ecb8695b93adcc
+	mtime: 1088624366
+    nunity/libmisc/localmach.c
+	length: 624
+	md5: 8771c273de80b188cdc405f7a39ba730
+	mtime: 1088624370
+    nunity/libmisc/makefile
+	length: 2610
+	md5: 2ad61c99c61232dfeca50704f2364aa1
+	mtime: 1059599490
+    nunity/libmisc/ncregcmp.c
+	length: 1733
+	md5: 350762dcb7c9079c1b596006bb1f730e
+	mtime: 1088624373
+    nunity/libmisc/nocasecmp.c
+	length: 5427
+	md5: 7ed2a2ae735a95e1fee8b34f59fe2df9
+	mtime: 1088624376
+    nunity/libmisc/oneline.c
+	length: 2280
+	md5: 59b05b3777eb8043cca22d05052a0cb8
+	mtime: 1088624380
+    nunity/libmisc/popen2.c
+	length: 11900
+	md5: 16229853d1548709b77f5428d211ee61
+	mtime: 1088624383
+    nunity/libmisc/prmsg.c
+	length: 8309
+	md5: 5c8783a4164688f1fb1238fe758e00fd
+	mtime: 1088624386
+    nunity/libmisc/prmsg.c.O
+	length: 7919
+	md5: 9d8c855b8fd061ca4f356e24b2ce1a8b
+	mtime: 1088624391
+    nunity/libmisc/prog.c
+	length: 480
+	md5: 98fe368165cff7ebd03e093ef32c4673
+	mtime: 1088624394
+    nunity/libmisc/re_unity.c
+	length: 1586
+	md5: caafe6d0d1cc0e9d5f97152450879662
+	mtime: 1088624398
+    nunity/libmisc/realuser.c
+	length: 883
+	md5: 9197c0b33d1b6df97b2edbd24ffd83f1
+	mtime: 1088624402
+    nunity/libmisc/regcmp.c
+	length: 4749
+	md5: 131d1aa37f281208efa3e1996aa441b0
+	mtime: 1088624405
+    nunity/libmisc/regex.c
+	length: 6269
+	md5: 48f12cb9ae4f485d4ed17b0f12c9bfb2
+	mtime: 1088624409
+    nunity/libmisc/restring.c
+	length: 3168
+	md5: 9a68d14159f0943c913f093a3d08570f
+	mtime: 1088624412
+    nunity/libmisc/shellcmd.c
+	length: 2271
+	md5: 5528c6e9f9d5bb56547f6b6731db6917
+	mtime: 1088624415
+    nunity/libmisc/splitflds.c
+	length: 1056
+	md5: 973bb655a3d88a0bfc6fa988d6f6cef8
+	mtime: 1088624418
+    nunity/libmisc/splitsflds.c
+	length: 913
+	md5: cd5220e356cdf7089cb78d1bf4246aa4
+	mtime: 1088624421
+    nunity/libmisc/teefp.c
+	length: 1009
+	md5: 60fbbb2cf6a92b6d6ba007cedba9b0fa
+	mtime: 1088624424
+    nunity/libunity/
+    nunity/libunity/exprojlist.c.O
+	length: 7853
+	md5: 409c2e4dd0e2e9d2c2378586d23281cc
+	mtime: 1088624715
+    nunity/libunity/addjoin.c
+	length: 5684
+	md5: 173e1685b5393c1cecc895f55d6f98b8
+	mtime: 1088624428
+    nunity/libunity/addtuple.c
+	length: 4771
+	md5: df49011e4c62254e6a6f61cec7bd2add
+	mtime: 1088624434
+    nunity/libunity/bindquery.c
+	length: 3573
+	md5: a54e4bc97a59098046a2140b0daef54e
+	mtime: 1088624437
+    nunity/libunity/bldquery.c
+	length: 34965
+	md5: b995220697e7843c136258df2b7b1d7b
+	mtime: 1088624440
+    nunity/libunity/blkjoin.c
+	length: 3053
+	md5: 5210feb61a6772a67b6a4b3bedab455b
+	mtime: 1088624444
+    nunity/libunity/bopen.c
+	length: 1014
+	md5: e5e5d9c98de7d3985fd74dbd81466c9d
+	mtime: 1088624447
+    nunity/libunity/chkaname.c
+	length: 858
+	md5: e4e508babe2ae459df368809195bfe6f
+	mtime: 1088624469
+    nunity/libunity/chkindex.c
+	length: 2347
+	md5: e196990ee095143d1b2c4e2dee128e6b
+	mtime: 1088624490
+    nunity/libunity/chkjoin.c
+	length: 5601
+	md5: 0524edab23c1527e34530d74ae98608d
+	mtime: 1088624503
+    nunity/libunity/chktuple.c
+	length: 17393
+	md5: b091b8e0ee0608e3ef1130f147e56bf4
+	mtime: 1088624515
+    nunity/libunity/chkupdate.c
+	length: 880
+	md5: 1b389d82766fc9dc3276394f3cbc3dab
+	mtime: 1088624518
+    nunity/libunity/cmpdate.c
+	length: 12941
+	md5: 8de7ccaf558ed57cefae7a6df4f6f5bd
+	mtime: 1088624521
+    nunity/libunity/cnttuples.c
+	length: 936
+	md5: fd412a360e2a8e541d1ccc3d495dfc19
+	mtime: 1088624523
+    nunity/libunity/cprelation.c
+	length: 9908
+	md5: 3d468f434b7eacf45282b65bf17dd9de
+	mtime: 1088624526
+    nunity/libunity/deltuple.c
+	length: 5327
+	md5: 81a2ba59a9d43275c8de7036d0fa1e07
+	mtime: 1088624529
+    nunity/libunity/doinsert.c
+	length: 6264
+	md5: 5bd4331b83b8c7b22a6d53eafe97299d
+	mtime: 1092161400
+    nunity/libunity/exprnode.c
+	length: 1222
+	md5: e823b88f5d9816a5f1f8df4f1e64edc9
+	mtime: 1088624534
+    nunity/libunity/exprojlist.c
+	length: 7827
+	md5: 2693439dd91357c45115481aebda0515
+	mtime: 1088624538
+    nunity/libunity/starttable.c.O
+	length: 748
+	md5: f3275e16a36ebbe090e612395f502700
+	mtime: 1055341514
+    nunity/libunity/findattr.c
+	length: 746
+	md5: 8687530d45a3e5f6134fe26ab8ac9c5f
+	mtime: 1088624540
+    nunity/libunity/fmkquery.c
+	length: 12808
+	md5: 92b1b93b314550c1dbaa7eb224b5a7f2
+	mtime: 1092161538
+    nunity/libunity/fmkquery.c.O
+	length: 12267
+	md5: 1239eca91cf79ef40d7e9a0752556ae1
+	mtime: 991770294
+    nunity/libunity/freerel.c
+	length: 1116
+	md5: 6dc2482bfd22db7f5c9fe6285b8c1da3
+	mtime: 1088624546
+    nunity/libunity/getrelinfo.c
+	length: 14672
+	md5: 9935174bf33205baddd93843d7d149c6
+	mtime: 1088624549
+    nunity/libunity/gettuple.c
+	length: 3349
+	md5: 2d163c3eb54123d604acc8ff9268ad70
+	mtime: 1088624552
+    nunity/libunity/hash.c
+	length: 7309
+	md5: 2885c8cb4e1483e9e16a1377263fa60c
+	mtime: 1088624555
+    nunity/libunity/hash.h
+	length: 6253
+	md5: dabc960eb98762fe17cb3b5fd790f1f8
+	mtime: 1088624561
+    nunity/libunity/hashjoin.c
+	length: 8816
+	md5: ba32f9a31af5afce2318eca22aa82045
+	mtime: 1088624563
+    nunity/libunity/indexch.c
+	length: 2008
+	md5: adc94b2d389770946e61ccf26457f342
+	mtime: 1088624565
+    nunity/libunity/isqvar.c
+	length: 1700
+	md5: 926dc9f2438f219cb3ceaa8cfaaee68c
+	mtime: 1088624569
+    nunity/libunity/lookupattr.c
+	length: 21102
+	md5: 3ba407d5e8663f8af8946053f25c3293
+	mtime: 1088624573
+    nunity/libunity/lookuptpl.c
+	length: 11387
+	md5: e19120a366f45a98964c8a6b753afb86
+	mtime: 1088624575
+    nunity/libunity/makefile
+	length: 5314
+	md5: e8417682fcaea6cbe7e118b39a58194b
+	mtime: 1158680286
+    nunity/libunity/mklock.c
+	length: 17569
+	md5: 58b2b5c082aa2d2566e34df4e55f1b98
+	mtime: 1088624577
+    nunity/libunity/mkquery.c
+	length: 794
+	md5: f2957882f0d0491eb7d81fc20e7e0477
+	mtime: 1088624580
+    nunity/libunity/modify.c
+	length: 9541
+	md5: 4c331fe0b0a9deadd1f6851eb6632eb7
+	mtime: 1088624582
+    nunity/libunity/ndcheck.c
+	length: 749
+	md5: 490577bcf42243f75a792c3dc870de95
+	mtime: 1088624584
+    nunity/libunity/ndread.c
+	length: 797
+	md5: 92a74933f36a26491c306415f19ede39
+	mtime: 1088624586
+    nunity/libunity/newqexpr.c
+	length: 2118
+	md5: b850597c76eb43722ac03396c2d339c4
+	mtime: 1088624589
+    nunity/libunity/newrelblk.c
+	length: 1849
+	md5: 941ed4760d20947a68de9f562913c9cd
+	mtime: 1088624592
+    nunity/libunity/newsnode.c
+	length: 4550
+	md5: 4856379d39489e668a1f727190195778
+	mtime: 1088624595
+    nunity/libunity/newtuple.c
+	length: 3790
+	md5: 6eb9f9f619f0baafa2a0bb3badb83a94
+	mtime: 1088624926
+    nunity/libunity/nexttuple.c
+	length: 10206
+	md5: b40727302844da69dc8e6884cf823cdd
+	mtime: 1088624598
+    nunity/libunity/outerjoin.c
+	length: 2957
+	md5: 8fba15dcb60761d04526536e7e8947db
+	mtime: 1088624601
+    nunity/libunity/packet.c
+	length: 1551
+	md5: e722df56ede3c6530aa5129d6e839bcd
+	mtime: 1088624603
+    nunity/libunity/peruse.c
+	length: 7492
+	md5: dbcc381f7a36f22462b5a64dbda42b9c
+	mtime: 1088624606
+    nunity/libunity/prcmp.c
+	length: 4184
+	md5: 809ee4847330eb4b6238f8f7e2f82b1d
+	mtime: 1088624610
+    nunity/libunity/prexpr.c
+	length: 1790
+	md5: 8f4a1480e353e427043e89400efc6644
+	mtime: 1088624614
+    nunity/libunity/prtplerror.c
+	length: 3323
+	md5: f0ab6b2c42a92e7f3c37cd9600c7c1e1
+	mtime: 1088624616
+    nunity/libunity/prtree.c
+	length: 2127
+	md5: f7e608326ea847274b1c8bdb4a6032e8
+	mtime: 1088624618
+    nunity/libunity/prtuples.c
+	length: 2486
+	md5: 6efe8b95aaada7a9957f3fc61cde9dc5
+	mtime: 1088624623
+    nunity/libunity/pruerror.c
+	length: 6014
+	md5: 5d15a10cb696ab831226a75023efbc57
+	mtime: 1088624625
+    nunity/libunity/prunejoin.c
+	length: 6585
+	md5: 77d1dcf43e5b5d443818ce6c34992e08
+	mtime: 1088624628
+    nunity/libunity/qdebug.c
+	length: 1586
+	md5: 15574fb4b32bf8ab4c2ebe44fafec417
+	mtime: 1088624630
+    nunity/libunity/qdebug.h
+	length: 250
+	md5: 567c56707fe000f6ff79555baa4148cb
+	mtime: 1088624636
+    nunity/libunity/queryeval.c
+	length: 31818
+	md5: a0cd45261b3156e45e6a8e6c58be81cd
+	mtime: 1088624638
+    nunity/libunity/querytorel.c
+	length: 4803
+	md5: c86ed64ec07624ec7298f2bf00329233
+	mtime: 1088624640
+    nunity/libunity/rdindexed.c
+	length: 1298
+	md5: 9a36509511b4a316daed4c295fd9019c
+	mtime: 1088624643
+    nunity/libunity/rdnext.c
+	length: 1476
+	md5: bd4077267cbe61bde3a0b0aa7e0a88c5
+	mtime: 1088624653
+    nunity/libunity/readtuple.c
+	length: 18455
+	md5: da06f559ae84154845b523f5a8dfa6cb
+	mtime: 1088624655
+    nunity/libunity/redef.c
+	length: 2341
+	md5: 308d8b41de74fc64efba17437192ebd9
+	mtime: 1088624657
+    nunity/libunity/regexpdef.re
+	length: 493
+	md5: a97e6b6f496547c58e4fb8a8bcce7794
+	mtime: 920323774
+    nunity/libunity/relreset.c
+	length: 3664
+	md5: b8e098e22a63d6432819812d812646f5
+	mtime: 1088624929
+    nunity/libunity/relropen.c
+	length: 4669
+	md5: 2c691cbdeb7e1c8cf02c51716fedcc89
+	mtime: 1088624661
+    nunity/libunity/result.c
+	length: 8249
+	md5: eb717e42f34be0ef33794072e14fe352
+	mtime: 1088624669
+    nunity/libunity/scan.c
+	length: 1223
+	md5: f96647a6cbe66b9eb2e40682efb6d600
+	mtime: 1088624673
+    nunity/libunity/seektuple.c
+	length: 2068
+	md5: 610bdea7494d09ec3e8c047139f28c05
+	mtime: 1088624675
+    nunity/libunity/smkquery.c
+	length: 2513
+	md5: 5a21c534d95e461da722edea0e50895e
+	mtime: 1088624679
+    nunity/libunity/sort_tpl.c
+	length: 18624
+	md5: 92293386ec83ddae412f66293882065c
+	mtime: 1092161559
+    nunity/libunity/sprintfb.c
+	length: 3749
+	md5: 82d56ab8cf159c879f1c84c5d09081bf
+	mtime: 1088624684
+    nunity/libunity/starttable.c
+	length: 1162
+	md5: 9bd8ee52f9bada370d87ff3e890c7222
+	mtime: 1088624688
+    nunity/libunity/vsmkquery.c.O
+	length: 1916
+	md5: e9de7e810ad1ce68727f0097d7086f36
+	mtime: 1055341933
+    nunity/libunity/tplfunc.c
+	length: 11262
+	md5: c539a6fe3f0bc6c672b77ea8c212d29c
+	mtime: 1088624691
+    nunity/libunity/uerror.c
+	length: 662
+	md5: 2917833a7033ab83fe35d1282aaac986
+	mtime: 1088624695
+    nunity/libunity/unmkquery.c
+	length: 1341
+	md5: 78485e347f2bf59cfea4010b63cfc8bb
+	mtime: 1088624698
+    nunity/libunity/unpacket.c
+	length: 4899
+	md5: a8419885f22ea1dcfbdaeb4a58ab180f
+	mtime: 1088624701
+    nunity/libunity/updindex.c
+	length: 3265
+	md5: aeddc2c73e4916c32b4ae166b25cc707
+	mtime: 1088624704
+    nunity/libunity/vmkquery.c
+	length: 2113
+	md5: 0bb4c6bf740123786550cf40b33bcff6
+	mtime: 1088624706
+    nunity/libunity/vmkquery.c.O
+	length: 1652
+	md5: 3132691015a15dcc8c06e049c1147035
+	mtime: 1055341972
+    nunity/libunity/vsmkquery.c
+	length: 2250
+	md5: 55b8a8204c01110f4b67579db69adc32
+	mtime: 1088624709
+    nunity/libunity/writeattr.c
+	length: 3994
+	md5: c7439015f223f8e1c2ea35a986f82b92
+	mtime: 1088624711
+    nunity/libunity/where.y
+	length: 32510
+	md5: 92c948e476ba1ad84e15425a43c9a1d6
+	mtime: 1058302271
+    nunity/libunity/writedescr.c
+	length: 6029
+	md5: 2b35ebfa82f5792bf81eaf6dee091434
+	mtime: 1088624717
+    nunity/libunity/writetuple.c
+	length: 811
+	md5: 790f1c8cfbf26556a8ebea9fe7fd28d2
+	mtime: 1088624720
+    nunity/man/
+    nunity/man/Envunpack.u.h
+	length: 770
+	md5: b0eed284b324044b5b33b55840be1428
+	mtime: 1088624730
+    nunity/man/Compile.h
+	length: 208
+	md5: b22ca7f8361b6200645eb0f0cddd0e93
+	mtime: 1088624734
+    nunity/man/Contents.mp
+	length: 5455
+	md5: c487cd39c45043c01fc95e68ae37906d
+	mtime: 1088624738
+    nunity/man/Environ.u.h
+	length: 1202
+	md5: 630068c5f0f149a82b5dc502a32302cc
+	mtime: 1088624747
+    nunity/man/descriptor.mp
+	length: 11033
+	md5: 6a2cd3d9217719da6ffc4d02823f8638
+	mtime: 1088624751
+    nunity/man/Exit.codes.h
+	length: 261
+	md5: 76035c88b49ff7d1423ea33dcddf245a
+	mtime: 1088624756
+    nunity/man/Files.u.h
+	length: 356
+	md5: 01f567a54a1cf8ab42043b0250e0cb31
+	mtime: 1088624764
+    nunity/man/Nodelist.h
+	length: 685
+	md5: 6a9d6c64d933d231350679a1194a8e3c
+	mtime: 1088624767
+    nunity/man/Qflags.h
+	length: 2165
+	md5: cd7f5c7981f97a4ad16a27009a6c27f2
+	mtime: 1088624772
+    nunity/man/Restrict.h
+	length: 437
+	md5: c0eefca9bc28a756dce974a808484809
+	mtime: 1088624780
+    nunity/man/Where.u.h
+	length: 2512
+	md5: 008f039bb2d35bf1275af43280009eb9
+	mtime: 1088624788
+    nunity/man/Where3.u.h
+	length: 2563
+	md5: 020944e7c83ce7a52f39912aaaba0c88
+	mtime: 1088624792
+    nunity/man/bldquery.mp
+	length: 6347
+	md5: e1fa5ce46aa38f8e9e7f9f824896531e
+	mtime: 1088624796
+    nunity/man/cmpquery.mp
+	length: 14981
+	md5: 080b469ac046008c3786638723325c7d
+	mtime: 1088624801
+    nunity/man/exprojlist.mp
+	length: 2227
+	md5: 0f215fb3a02e142aadd9e0e00320a233
+	mtime: 1088624805
+    nunity/man/do_insert.mp
+	length: 7329
+	md5: b0cada264fe00d175067dd42f981d09a
+	mtime: 1088624807
+    nunity/man/getrelinfo.mp
+	length: 5568
+	md5: 915991c6ac8a9062e560d50e59c4a5da
+	mtime: 1088624810
+    nunity/man/lookupattr.mp
+	length: 9804
+	md5: 7af4d3f20f47ff246c6d834afc6654f1
+	mtime: 1088624813
+    nunity/man/makefile
+	length: 3000
+	md5: 40e8df6c8bd9bb6a6733d12a33a4dbba
+	mtime: 941772473
+    nunity/man/mkquery.mp
+	length: 16729
+	md5: 1cfc170cdc1808a1b8fec8a7ee74470b
+	mtime: 1088624817
+    nunity/man/nalter.mp
+	length: 17725
+	md5: 18f545fc546340971e2127f9b27c87df
+	mtime: 1088624820
+    nunity/man/ndelete.mp
+	length: 5758
+	md5: 69d9578cf087a616aba7f21acbe7a4c2
+	mtime: 1088624826
+    nunity/man/nexttuple.mp
+	length: 8311
+	md5: d84b27949e5b6749a24fa16e0ff8591e
+	mtime: 1088624831
+    nunity/man/ninsert.mp
+	length: 10280
+	md5: ce668e3f2070e1dd1f1ba9f9e5d68977
+	mtime: 1088624833
+    nunity/man/nuedit.mp
+	length: 10868
+	md5: e13200624af0888a16fa05b52f69b130
+	mtime: 1088624841
+    nunity/man/parsewhere.mp
+	length: 2588
+	md5: 5033de6a11514a914f716b36385a03ec
+	mtime: 1088624845
+    nunity/man/peruse.mp
+	length: 11884
+	md5: ef261201db779314cd14e89e861eeffa
+	mtime: 1088624849
+    nunity/man/prblock.mp
+	length: 11362
+	md5: 1bf96c6e2ecc93ef1b0940d10cb0a9a7
+	mtime: 1088624853
+    nunity/man/prmsg.mp
+	length: 5682
+	md5: 857a403169b97d11d2ace69252ceac87
+	mtime: 1088624855
+    nunity/man/prtable.mp
+	length: 18010
+	md5: ee93b63ec387804ac0049aa1636aaee5
+	mtime: 1088624858
+    nunity/man/qprintf.mp
+	length: 7455
+	md5: 58f699777aa2f6aa6b5ca97693ba83eb
+	mtime: 1088624862
+    nunity/man/queryeval.mp
+	length: 4514
+	md5: 34f7660cc16656e8179f734ca1a9eefc
+	mtime: 1088624865
+    nunity/man/retrieve.mp
+	length: 47053
+	md5: 54857b8dd66809d42da94fcca0d5ea2e
+	mtime: 1088624870
+    nunity/man/rmulock.mp
+	length: 1574
+	md5: cd9410fda18ad7e2630e2ecf7c003157
+	mtime: 1088624872
+    nunity/man/setalloc.mp
+	length: 2679
+	md5: 89224e1a4116f578b7e54d333553a606
+	mtime: 1088624878
+    nunity/man/setpackenv.mp
+	length: 3181
+	md5: 265957a4f3a9bca98e504d5fa26b6d51
+	mtime: 1088624881
+    nunity/man/settplfunc.mp
+	length: 6153
+	md5: bd540c0ce6cf67f0d366470e23d16b12
+	mtime: 1088624884
+    nunity/man/udiff.mp
+	length: 9655
+	md5: faa3012d3d7e04a95f4a13e75cc170d2
+	mtime: 1088624888
+    nunity/man/uerror.mp
+	length: 7379
+	md5: ebc4aac580a5f3fbc5bc0248ff58db3a
+	mtime: 1088624893
+    nunity/man/ulock.mp
+	length: 3243
+	md5: 98a5bdb2b74e38fb2402a0de363980d2
+	mtime: 1088624896
+    nunity/man/umerge.mp
+	length: 32478
+	md5: c50ec947d7794565cf8e2d217b58f803
+	mtime: 1088624898
+    nunity/man/usort.mp
+	length: 9801
+	md5: 9be792122ca34380a7a2dedaed33edc3
+	mtime: 1088624901
+    nunity/README
+	length: 6215
+	md5: 3f56d6f04492f22ada80c84817984434
+	mtime: 1059599490
+    nunity/iosize
+	length: 158
+	md5: cb193951463a599bf0988f92a9de1c4c
+	mtime: 941818149
+    nunity/makefile
+	length: 5296
+	md5: 10296433ae6272b289ef7dcb8b9a1fe7
+	mtime: 1059599491
+    nunity/mkunity
+	length: 7200
+	md5: 89d010ad2b28c0e3f2f9f34af53acc65
+	mode: rwx
+	mtime: 1059599491
+    nunity/umake
+	length: 9741
+	md5: 0a4abcaa7010fe565e8b78121d83d7ab
+	mode: rwx
+	mtime: 1108056623
+    contrib-un2html/
+    contrib-un2html/man/
+    contrib-un2html/man/un2html.1m
+	length: 4523
+	md5: c528fa4ce0bdafab8a7c1610a5954f09
+	mode: r
+	mtime: 1108053846
+    contrib-un2html/man/un2tbl.1m
+	length: 1190
+	md5: c27e60aea52f8ebaedd3166661b714fb
+	mode: r
+	mtime: 1108053865
+    contrib-un2html/Clear_opts.c
+	length: 819
+	md5: 237897c5546b84cd1e3193f9e04e1360
+	mtime: 1107977228
+    contrib-un2html/Catch.c
+	length: 2307
+	md5: 4526b2f30b2cf347f4f9cc52652d00b6
+	mtime: 1108066047
+    contrib-un2html/Curr_date.c
+	length: 2166
+	md5: 642dc50ace05fb0304f843ca3b231286
+	mode: r
+	mtime: 1107977228
+    contrib-un2html/Digtostr.c
+	length: 1536
+	md5: 9e37f941f063818e3d18efb9e805d5d6
+	mtime: 1107977228
+    contrib-un2html/Fopen.c
+	length: 1331
+	md5: 6f19271bb3e806c2bb1cded6c707dc05
+	mtime: 1107977227
+    contrib-un2html/Getbasedr.c
+	length: 4450
+	md5: 01d5f3bcbd97354b4d55c1f2cf69c74a
+	mtime: 1107977795
+    contrib-un2html/LIB.h
+	length: 2235
+	md5: 37df3df68f34396052c204a14bda49c5
+	mode: r
+	mtime: 1108057782
+    contrib-un2html/Makefile
+	length: 740
+	md5: 122eaa8e526dc2ba07e43d7dcded2583
+	mtime: 1108071349
+    contrib-un2html/Printbrk.c
+	length: 1155
+	md5: 2482bd6e71b12ecefccc3e15cad3e5a4
+	mode: r
+	mtime: 1107977772
+    contrib-un2html/Pwd.c
+	length: 2715
+	md5: 41f25fe20d3ed2d3c7f559a5f17f7179
+	mode: r
+	mtime: 1108061350
+    contrib-un2html/Quit.c
+	length: 2498
+	md5: 89c8947ca11fefbd4c06cf239c2da4a1
+	mtime: 1107977766
+    contrib-un2html/Set_option.c
+	length: 1273
+	md5: e1d61bc473eaeeeddacff16d164515d6
+	mtime: 1107977227
+    contrib-un2html/Strcat.c
+	length: 783
+	md5: 4548e67c97eac27f1b2c40a7e98e751c
+	mtime: 1107977198
+    contrib-un2html/Strcpy.c
+	length: 716
+	md5: e8082a6e10a15705a29f462d33157622
+	mtime: 1107977227
+    contrib-un2html/Strsrch.c
+	length: 1003
+	md5: aea8718d7c25d311976117ba4192f46e
+	mtime: 1107977227
+    contrib-un2html/Usage.c
+	length: 3564
+	md5: a7524a1d1a0250196b064c66c6594bba
+	mtime: 1107977822
+    contrib-un2html/umake
+	length: 455
+	md5: e14d86d0cae17f3113c8f14b67a1e636
+	mode: rwx
+	mtime: 1143044261
+    contrib-un2html/un2html.c
+	length: 9544
+	md5: 45c42683e5fc4e53d9e91a500dcb5999
+	mode: r
+	mtime: 1108061222
+    contrib-un2html/un2tbl.c
+	length: 3660
+	md5: 346780c0b530784c8d2091d1f8d33751
+	mode: r
+	mtime: 1108061247
+    misc/
+    misc/bin/
+    misc/lib/
+    misc/lib/toolhist/
+    misc/lib/toolhist/unity
+	length: 2824
+	md5: eb6134026ab3bbf60c497f227237666f
+	mtime: 1108066465
+    misc/lib/toolinfo/
+    misc/lib/toolinfo/unity/
+    misc/lib/toolinfo/unity/description
+	length: 344
+	md5: 1235dc656c456176136578157f73efa4
+	mtime: 1108072410
+    misc/lib/toolnews/
+    misc/lib/toolnews/unity
+	length: 1389
+	md5: 6fa1899b78e6dcadb68757a826e7fc7c
+	mtime: 1158679075
+    misc/lib/unity/
+    misc/lib/unity/bin/
+    misc/man/
+    misc/man/man1/
+    misc/man/man1/unity.1
+	length: 1523
+	md5: 9f765158ad21a9d386295df6f5a341fd
+	mtime: 920323780
+    COPYING
+	length: 11697
+	md5: 74439deb0eaaa32b0d0cf0292a4fd37b
+	mtime: 1088624998
+    homepage/
+    homepage/index.html
+	length: 828
+	md5: a90dd81ee383387edb83a96ddebbaaae
+	mtime: 1114169931
+maintainers:
+    Peter Fales <psfales@lucent.com>
+	pgpKeyUrl: rsync://www.bell-labs.com/wwexptools/keys/psfales.txt
+    Lucent Central Exptools Administrator <exptools@lucent.com>
+	pgpKeyUrl: rsync://www.bell-labs.com/wwexptools/keys/exptools.txt
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3-exptools1 (GNU/Linux)
+
+iD8DBQFFEBDg2BFa/I0QOZwRAgSvAJ9Gm3elD8B2hdTyRcsg8VYQjh4OUgCgn11f
+cz+OvSxIsWCOV2zp14geA2w=
+=HilC
+-----END PGP SIGNATURE-----

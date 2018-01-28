@@ -1,0 +1,12 @@
+nsbPackageDescription: 1
+paths:
+  Makefile
+  *.npd
+  unity/
+  nunity/
+  contrib-un2html/
+  misc/
+  COPYING
+  homepage/
+updateParameters:
+  excludeCvs

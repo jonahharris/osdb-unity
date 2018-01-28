@@ -1,0 +1,42 @@
+If you do a uget on a file w/o an s. file being there
+it destroys the file.
+
+Get rid of join and select commands; use "ujoin" or "uselect"
+only.  This will avoid the Unix and shell commands with the
+same name.
+
+If second file for ujoin is stdin, twice the number of records
+get joined as should be.
+
+Using standard input piped to uprint with more fields than the line length
+will allow the table appears to be split to produce an initial table
+containing the first fields that fit the line length (as expected),
+but the remaining fields are not printed in a subsequent table (unexpected).
+
+"cat /etc/passwd | uprint -Ipasswd -w80 - where login leq mmcmanus" gives:
+
+
+|------------------------------------------------------------------------|
+|login   |passwd        |  uid|  gid|acct                |home           |
+|------------------------------------------------------------------------|
+|mmcmanus|2nfY4vkMvBEu. | 8367| 8367|ml330-McManus,M.H.(m|/a/a122/mmcmanu|
+|        |              |     |     |l3300)211           |s              |
+|------------------------------------------------------------------------|
+
+whereas "uprint -Ipasswd -w80 /etc/passwd where login leq mmcmanus" gives:
+
+
+|------------------------------------------------------------------------|
+|login   |passwd        |  uid|  gid|acct                |home           |
+|------------------------------------------------------------------------|
+|mmcmanus|2nfY4vkMvBEu. | 8367| 8367|ml330-McManus,M.H.(m|/a/a122/mmcmanu|
+|        |              |     |     |l3300)211           |s              |
+|------------------------------------------------------------------------|
+
+
+|------------|
+|shell       |
+|------------|
+|/usr/lbin/ks|
+|h           |
+|------------|
